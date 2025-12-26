@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
-<html lang="cs" class="dark">
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>FireGOLD Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -30,6 +31,43 @@
         }
       }
     </script>
+    <style>
+      /* Custom Scrollbar Styles */
+      
+      /* Webkit (Chrome, Safari, Edge) */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f3f4f6; /* Gray 100 */
+      }
+      
+      .dark ::-webkit-scrollbar-track {
+        background: #0f172a; /* Slate 900 */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #eab308; /* Yellow 500 */
+        border-radius: 20px;
+        border: 3px solid #f3f4f6;
+      }
+
+      .dark ::-webkit-scrollbar-thumb {
+        background-color: #eab308; /* Yellow 500 */
+        border: 3px solid #0f172a;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #ca8a04; /* Yellow 600 */
+      }
+
+      /* Firefox */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #eab308 transparent;
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {
@@ -41,7 +79,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-50 dark:bg-slate-900 transition-colors duration-200">
-    <div id="root"></div>
+  <body class="bg-gray-50 dark:bg-slate-900 transition-colors duration-200 overflow-x-hidden w-full">
+    <div id="root" class="w-full overflow-x-hidden"></div>
   </body>
 </html>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   CheckCircle, 
@@ -8,6 +9,7 @@ import {
   Award, 
   BarChart, 
   ChevronRight,
+  ChevronLeft,
   RefreshCw,
   Home,
   Bookmark,
@@ -23,6 +25,7 @@ export const IconBook = () => <BookOpen className="w-6 h-6" />;
 export const IconAward = () => <Award className="w-6 h-6" />;
 export const IconChart = () => <BarChart className="w-6 h-6" />;
 export const IconArrowRight = () => <ChevronRight className="w-5 h-5" />;
+export const IconArrowLeft = () => <ChevronLeft className="w-5 h-5" />;
 export const IconRefresh = () => <RefreshCw className="w-5 h-5" />;
 export const IconHome = () => <Home className="w-5 h-5" />;
 export const IconBookmark = ({ filled }: { filled?: boolean }) => (
