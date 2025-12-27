@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   CheckCircle, 
@@ -14,7 +13,9 @@ import {
   Home,
   Bookmark,
   Settings,
-  Info
+  Info,
+  HelpCircle,
+  X
 } from 'lucide-react';
 
 export const IconCheck = () => <CheckCircle className="w-6 h-6 text-green-500" />;
@@ -33,3 +34,5 @@ export const IconBookmark = ({ filled }: { filled?: boolean }) => (
 );
 export const IconSettings = () => <Settings className="w-5 h-5" />;
 export const IconInfo = () => <Info className="w-5 h-5" />;
+export const IconHelp = () => <HelpCircle className="w-5 h-5" />;
+export const IconClose = () => <X className="w-6 h-6" />;

@@ -7,6 +7,18 @@ export enum Category {
   ETHICS_COMPANY = "O společnosti a etika"
 }
 
+export interface StudyHelpSection {
+  icon?: string;
+  title: string;
+  text?: string;
+  bullets?: string[];
+}
+
+export interface StudyHelpObject {
+  meta?: { topic?: string; readTime?: string };
+  sections: StudyHelpSection[];
+}
+
 export interface Question {
   id: number;
   text: string;
@@ -16,6 +28,9 @@ export interface Question {
   text_sk?: string;
   options_sk?: string[];
   explanation_sk?: string;
+  
+  studyHelp?: string | StudyHelpObject; // Volitelný studijní materiál / nápověda (string nebo objekt)
+  studyHelp_sk?: string | StudyHelpObject; // Slovenská verze nápovědy
   
   correctAnswerIndices: number[]; // Changed to support multiple answers
   category: Category;

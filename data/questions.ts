@@ -19,7 +19,77 @@ export const questions: Question[] = [
       "Zlaté zliatky 999/1000 a zlaté mince 999/1000",
       "Zlaté zliatky 999/1000 a zlaté mince 900/1000"
     ],
-    explanation_sk: "Podľa zákona o DPH je investičné zlato definované ako zlato s rýdzosťou aspoň 995 tisícin pre zliatky a aspoň 900 tisícin pre mince.",
+    explanation_sk: "Podľa zákona o DPH je investičné zlato definované ako zlato s rýdzosťou aspoň 995 tisíc pre zliatky a aspoň 900 tisíc pre mince.",
+    studyHelp: {
+      meta: { topic: "Téma: Investiční zlato", readTime: "Čas: 1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Proč se to řeší",
+          text: "Jde o zákonnou definici pro daňové účely. Zlato, které splní limity investičního zlata, je osvobozeno od DPH (dle § 92 zákona o DPH)."
+        },
+        {
+          icon: "📌",
+          title: "Minimální ryzost (zákonné minimum)",
+          bullets: [
+            "Slitky (cihly, destičky): nejméně 995/1000.",
+            "Mince: nejméně 900/1000.",
+            "Limity jsou různé pro slitky a pro mince."
+          ]
+        },
+        {
+          icon: "🪙",
+          title: "U mincí navíc",
+          bullets: [
+            "Ražba po roce 1800.",
+            "Zákonné platidlo."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly",
+          bullets: [
+            "Nezaměňujte zákonné minimum s tím, co se běžně prodává (např. slitky 999,9/1000).",
+            "Neplatí stejné číslo pro slitky i mince: mince mohou mít 900/1000 a přesto jít o investiční zlato."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Téma: Investičné zlato", readTime: "Čas: 1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Prečo sa to rieši",
+          text: "Ide o zákonnú definíciu na daňové účely. Zlato, ktoré splní limity investičného zlata, je oslobodené od DPH (podľa § 92 zákona o DPH)."
+        },
+        {
+          icon: "📌",
+          title: "Minimálna rýdzosť (zákonné minimum)",
+          bullets: [
+            "Zliatky (tehly, doštičky): najmenej 995/1000.",
+            "Mince: najmenej 900/1000.",
+            "Limity sú rôzne pre zliatky a pre mince."
+          ]
+        },
+        {
+          icon: "🪙",
+          title: "Pri minciach navyše",
+          bullets: [
+            "Razba po roku 1800.",
+            "Zákonné platidlo."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly",
+          bullets: [
+            "Nezamieňajte zákonné minimum s tým, čo sa bežne predáva (napr. zliatky 999,9/1000).",
+            "Neplatí rovnaké číslo pre zliatky aj mince: mince môžu mať 900/1000 a napriek tomu ísť o investičné zlato."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [0],
     category: Category.GOLD_MARKET
   },
@@ -41,6 +111,60 @@ export const questions: Question[] = [
       "Má garantovaný výnos"
     ],
     explanation_sk: "Zlato historicky uchováva hodnotu a funguje ako poistka (záchranné koleso) v časoch ekonomických kríz a inflácie, kedy fiat meny strácajú hodnotu.",
+    studyHelp: {
+      meta: { topic: "Zlato jako bezpečný přístav", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Proč „bezpečný přístav“",
+          text:
+            "Zlato se tak označuje, protože funguje jako historicky ověřená pojistka v době krize a dlouhodobý uchovatel hodnoty. Na rozdíl od nekrytých peněz nepodléhá znehodnocení stejným způsobem a nenese riziko protistrany (např. krach banky nebo státu)."
+        },
+        {
+          icon: "📌",
+          title: "Kdy to dává smysl",
+          bullets: [
+            "V období nejistoty (politické a hospodářské krize, konflikty), kdy lidé hledají stabilnější uchování hodnoty.",
+            "Při obavách z vysoké inflace a znehodnocení úspor v hodovosti nebo v bankovém systému."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Co to neznamená",
+          bullets: [
+            "Nejde o garanci zisku – růst ceny je spíše bonus k hlavní funkci ochrany majetku.",
+            "Cena může kolísat (zlato je volatilní). Pro omezení výkyvů se často uvádí průměrování ceny pravidelným nákupem."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Zlato ako bezpečný prístav", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Prečo „bezpečný prístav“",
+          text:
+            "Zlato sa tak označuje, pretože funguje ako historicky overená poistka v čase krízy a dlhodobý uchovávateľ hodnoty. Na rozdiel od nekrytých peňazí nepodlieha znehodnoteniu rovnakým spôsobom a nenesie riziko protistrany (napr. krach banky alebo štátu)."
+        },
+        {
+          icon: "📌",
+          title: "Kdy to dáva zmysel",
+          bullets: [
+            "V období neistoty (politické a hospodárske krízy, konflikty), kedy ľudia hľadajú stabilnejšie uchovanie hodnoty.",
+            "Pri obavách z vysokej inflácie a znehodnotenia úspor v hodovosti alebo v bankovom systéme."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Čo to neznamená",
+          bullets: [
+            "Nejde o garanciu zisku – rast ceny je skôr bonus k hlavnej funkcii ochrany majetku.",
+            "Cena môže kolísať (zlato je volatilné). Pre obmedzenie výkyvov sa často uvádza priemerovanie ceny pravidelným nákupom."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [0],
     category: Category.GOLD_MARKET
   },
@@ -62,6 +186,64 @@ export const questions: Question[] = [
       "Nízka likvidita"
     ],
     explanation_sk: "Zlato negeneruje úrok, ale jeho hlavnou funkciou je uchovanie kúpnej sily v čase, najmä počas kríz.",
+    studyHelp: {
+      meta: { topic: "Hlavní výhoda investice do zlata", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "O co u zlata hlavně jde",
+          text:
+            "Investiční zlato se často používá jako uchovatel hodnoty a pojistka v době krize. Jeho smyslem je chránit kupní sílu úspor při inflaci a v obdobích ekonomické nebo politické nejistoty. Zlato je fyzické aktivum bez rizika protistrany."
+        },
+        {
+          icon: "⚠️",
+          title: "Co od zlata nečekat",
+          bullets: [
+            "Zlato negeneruje pravidelný úrok – zhodnocení vzniká hlavně změnou ceny.",
+            "Nejde o produkt se státní zárukou; zlato se často uvádí právě jako ochrana při problémech finančního systému."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "A) Uchovatel hodnoty v krizích – odpovídá hlavní roli investičního zlata.",
+            "B) Pravidelný úrok – to zlato nemá.",
+            "C) Státní záruka – zlato není státem garantovaný produkt.",
+            "D) Nízká likvidita – zlato se obvykle uvádí jako dobře směnitelné aktivum."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Hlavná výhoda investície do zlata", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "O čo pri zlate hlavne ide",
+          text:
+            "Investičné zlato sa často používa ako uchovávateľ hodnoty a poistka v čase krízy. Jeho zmyslom je chradiť kúpnu silu úspor pri inflácii a v obdobiach ekonomickej alebo politickej neistoty. Zlato je fyzické aktívum bez rizika protistrany."
+        },
+        {
+          icon: "⚠️",
+          title: "Čo od zlata nečakať",
+          bullets: [
+            "Zlato negeneruje pravidelný úrok – zhodnotenie vzniká hlavně zmenou ceny.",
+            "Nejde o produkt so štátnou zárukou; zlato sa často uvádza práve ako ochrana pri problémoch finančného systému."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "A) Uchovávateľ hodnoty v krízach – zodpovedá hlavnej úlohe investičného zlata.",
+            "B) Pravidelný úrok – to zlato nemá.",
+            "C) Štátna záruka – zlato nie je štátom garantovaný produkt.",
+            "D) Nízka likvidita – zlato sa obvykle uvádza ako dobre zameniteľné aktívum."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [0],
     category: Category.GOLD_MARKET
   },
@@ -70,7 +252,7 @@ export const questions: Question[] = [
     text: "Co znamená pojem Good Delivery a která tvrzení jsou pravdivá?",
     options: [
       "Zlato a stříbro označené 'Good Delivery' není vůbec likvidní",
-      "Slitky označené 'Good Delivery' jsou akceptovány na všech trzích s drahými kovy po celém světě, protože splňují přísné požadavky na kvalitu",
+      "Slitky označené 'Good Delivery' are akceptovány na všech trzích s drahými kovy po celém světě, protože splňují přísné požadavky na kvalitu",
       "Veškerý nabízený sortiment z rafinérie PAMP a mincovny The Royal Mint splňuje standardy 'Good Delivery'",
       "'Good Delivery' u zlata označuje, že daný zlatý slitek splňuje mezinárodně uznávané standardy kvality a rafinace, stanovené asociací London Bullion Market Association (LBMA)"
     ],
@@ -82,7 +264,57 @@ export const questions: Question[] = [
       "Všetok ponúkaný sortiment z rafinérie PAMP a mincovne The Royal Mint spĺňa štandardy 'Good Delivery'",
       "'Good Delivery' pri zlate označuje, že daný zlatý zliatok spĺňa medzinárodne uznávané štandardy kvality a rafinácie, stanovené asociáciou London Bullion Market Association (LBMA)"
     ],
-    explanation_sk: "Štandard Good Delivery (LBMA) definuje medzinárodné požiadavky na kvalitu a rafináciu. Zliatky s týmto označením sú celosvetovo likvidné a akceptované. Sortiment PAMP aj The Royal Mint tieto najvyššie štandardy spĺňa.",
+    explanation_sk: "Štandard Good Delivery (LBMA) definuje medzinárodné požiadavky na kvalitu a rafináciu. Zliatky s týmto označením jsou celosvetovo likvidní a akceptované. Sortiment PAMP aj The Royal Mint tieto najvyššie štandardy spĺňa.",
+    studyHelp: {
+      meta: { topic: "Good Delivery (LBMA)", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co je Good Delivery",
+          text: "„Good Delivery“ u zlata znamená, že zlatý slitek splňuje mezinárodně uznávané standardy kvality a rafinace stanovené asociací London Bullion Market Association (LBMA). Jde o akreditaci, která potvrzuje, že rafinérie plní přísné požadavky."
+        },
+        {
+          icon: "🌍",
+          title: "Proč je to důležité",
+          text: "Slitky with akreditací LBMA jsou běžně akceptované na trzích s drahými kovy po celém světě a mají vysokou likviditu. Slitky bez této certifikace mohou mít omezenější přijatelnost (např. je nemusí vykupovat většina bank)."
+        },
+        {
+          icon: "✅",
+          title: "Tvrzení (rychlý přehled)",
+          bullets: [
+            "A) Nepravda – „Good Delivery“ naopak znamená vysokou likviditu a globální přijatelnost.",
+            "B) Pravda – uznání je založené na splnění přísných standardů kvality.",
+            "C) Pravda – sortiment PAMP i The Royal Mint v materiálech splňuje standardy „Good Delivery“.",
+            "D) Pravda – jde o definici odpovídající studijním materiálům (LBMA standard)."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Good Delivery (LBMA)", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo je Good Delivery",
+          text: "„Good Delivery“ pri zlate znamená, že zlatý zliatok spĺňa medzinárodne uznávané štandardy kvality a rafinácie stanovené asociáciou London Bullion Market Association (LBMA). Ide o akreditáciu, ktorá potvrdzuje, že rafinéria plní prísne požiadavky."
+        },
+        {
+          icon: "🌍",
+          title: "Prečo je to dôležité",
+          text: "Zliatky s akreditáciou LBMA sú bežne akceptované na trhoch s drahými kovmi po celom svete a majú vysokú likviditu. Zliatky bez tejto certifikácie môžu mať obmedzenejšiu prijateľnosť (napr. ich nemusia vykupovať mnohé banky)."
+        },
+        {
+          icon: "✅",
+          title: "Tvrdenia (rýchly prehľad)",
+          bullets: [
+            "A) Nepravda – „Good Delivery“ naopak znamená vysokou likviditu a globálnu prijateľnosť.",
+            "B) Pravda – uznanie je založené na splnení prísnych štandardov kvality.",
+            "C) Pravda – sortiment PAMP a The Royal Mint spĺňa štandardy „Good Delivery“.",
+            "D) Pravda – ide o definíciu zodpovedajúcu štandardu LBMA."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [1, 2, 3],
     category: Category.GOLD_MARKET
   },
@@ -95,7 +327,7 @@ export const questions: Question[] = [
       "Nelze ho předat dětem",
       "Podléhá zvláštní daňové sazbě"
     ],
-    explanation: "Fyzické zlato je movitá věc, kterou lze snadno fyzicky předat dědicům.",
+    explanation: "Fyzické zlato is movitá věc, kterou lze snadno fyzicky předat dědicům.",
     text_sk: "Aká je právna výhoda fyzického zlata v dedičstve?",
     options_sk: [
       "Automaticky pripadá štátu",
@@ -104,6 +336,60 @@ export const questions: Question[] = [
       "Podlieha zvláštnej daňovej sadzbe"
     ],
     explanation_sk: "Fyzické zlato je hnuteľná vec, ktorú možno ľahko fyzicky odovzdať dedičom.",
+    studyHelp: {
+      meta: { topic: "Dědictví a fyzické zlato", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Právní výhoda v kostce",
+          text: "Fyzické investiční zlato je movitý (hmotný) majetek a může být drženo anonymně. Pokud ho má vlastník fyzicky u sebe (např. doma), může ho předat nebo darovat bez povinné úřední evidence či hlášení změny vlastníka. V dědictví je to výhoda hlavně kvůli jednoduchosti a diskrétnosti."
+        },
+        {
+          icon: "📌",
+          title: "Prakticky to znamená",
+          bullets: [
+            "Zlato držené doma lze dědicům fyzicky předat bez složité administrativy.",
+            "U zlata drženého na smlouvu (spoření/depozit) přecházejí práva na dědice a po doložení nároku se provede změna majitele smlouvy.",
+            "Zlato je vysoce mobilní: velká hodnota v malém objemu usnadňuje přenos."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly",
+          bullets: [
+            "Zlato lze odkázat dětem – často se pořizuje právě jako rezerva pro ně.",
+            "Zlato automaticky nepropadá státu; jde o soukromý majetek."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Dedičstvo a fyzické zlato", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Právna výhoda v skratke",
+          text: "Fyzické investičné zlato je hnuteľný (hmotný) majetok a môže byť držané anonymne. Ak ho má vlastník fyzicky u sebe (napr. doma), môže ho odovzdať alebo darovať bez povinnej úradnej evidencie či hlásenia zmeny vlastníka. V dedičstve je to výhoda hlavně kvôli jednoduchosti a diskrétnosti."
+        },
+        {
+          icon: "📌",
+          title: "Prakticky to znamená",
+          bullets: [
+            "Zlato držané doma možno dedičom fyzicky odovzdať bez zložitej administratívy.",
+            "Pri zlate držanom na zmluvu (sporenie/depozit) prechádzajú práva na dedičov a po doložení nároku sa vykoná zmena majiteľa zmluvy.",
+            "Zlato je vysoko mobilní: veľká hodnota v malém objemu uľahčuje prenos."
+          ]
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly",
+          bullets: [
+            "Zlato možno odkázať deťom – často se obstaráva práve ako rezerva pre ne.",
+            "Zlato automaticky neprepadá štátu; ide o súkromný majetek."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [1],
     category: Category.GOLD_MARKET
   },
@@ -124,7 +410,77 @@ export const questions: Question[] = [
       "Zlato, latinsky aurum, v preklade znamená „žiarivý úsvit“",
       "Rýdzosť je číselný údaj o pomernom hmotnostnom obsahu zlata v predmete alebo v zliatine"
     ],
-    explanation_sk: "Všetky tvrdenia sú pravdivé: Zlato má extrémnu hustotu (19,3 g/cm³), je 19x ťažšie ako voda a 2,5x ako železo, preto by celá tona vytvorila kocku s hranou len cca 37,27 cm. Latinský názov Aurum znamená 'žiarivý úsvit' a rýdzosť vyjadruje podiel čistého kovu v zliatine.",
+    explanation_sk: "Všetky tvrdenia sú pravdivé: Zlato má extrémnu hustotu (19,3 g/cm³), je 19x ťažšie ako voda a 2,5x ako železo, preto by celá tona vytvorila kocku s hranou len cca 37,27 cm. Latinský názov Aurum znamená 'zářivý úsvit' a rýdzosť vyjadruje podiel čistého kovu v zliatine.",
+    studyHelp: {
+      meta: { topic: "Základní fakta o zlatě", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "O co v otázce jde",
+          text:
+            "Tvrzení se týkají čtyř běžných faktů o zlatě: jak je „těžké“ (hustota), jak malý prostor zabere velká hmotnost, odkud pochází název „aurum“ a co znamená pojem ryzost."
+        },
+        {
+          icon: "🧊",
+          title: "1 tuna zlata a velikost krychle",
+          text:
+            "Zlato je velmi husté, takže velká hmotnost zabere malý prostor. Jedna tuna zlata (to je 1 000 kilogramů) by se vešla do krychle s hranou přibližně 37 centimetrů. Pro představu: velikost menší krabice."
+        },
+        {
+          icon: "⚖️",
+          title: "Hustota jednoduše",
+          text:
+            "Když porovnáte stejně velký kus vody a stejně velký kus zlata, zlato bude zhruba 19× těžší. A stejně velký kus železa bude proti zlatu asi 2,5× lehčí. Proto se říká, že zlato má extrémně vysokou hustotu."
+        },
+        {
+          icon: "🏛️",
+          title: "Aurum (latinský název zlata)",
+          text:
+            "Latinský název zlata je „aurum“. V popularizačních textech se uvádí význam spojený se září a leskem a někdy se používá volnější překlad typu „zářivý úsvit“."
+        },
+        {
+          icon: "🔎",
+          title: "Co je ryzost",
+          text:
+            "Ryzost říká, kolik čistého zlata je ve slitině. Často se uvádí jako číslo z 1 000 (například 999/1000 znamená téměř čisté zlato). Druhý způsob zápisu je v karátech; 24 karátů je téměř čisté zlato."
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Základné fakty o zlate", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "O čo v otázke ide",
+          text:
+            "Tvrdenia sa týkajú štyroch bežných faktov o zlate: ako je „ťažké“ (hustota), aký malý priestor zaberie veľká hmotnosť, odkiaľ pochádza názov „aurum“ a čo znamená pojem rýdzosť."
+        },
+        {
+          icon: "🧊",
+          title: "1 tona zlata a veľkosť kocky",
+          text:
+            "Zlato je veľmi husté, takže veľká hmotnosť zaberie malý priestor. Jedna tona zlata (to je 1 000 kilogramov) by sa zmestila do kocky s hranou približne 37 centimetrov. Pre predstavu: veľkosť menšej škatule."
+        },
+        {
+          icon: "⚖️",
+          title: "Hustota jednoducho",
+          text:
+            "Keď porovnáte rovnako veľký kus vody a rovnako veľký kus zlata, zlato bude zhruba 19× ťažšie. A rovnako veľký kus železa bude proti zlatu asi 2,5× ľahší. Preto sa hovorí, že zlato má extrémne vysokú hustotu."
+        },
+        {
+          icon: "🏛️",
+          title: "Aurum (latinský název zlata)",
+          text:
+            "Latinský názov zlata je „aurum“. V popularizačných textoch sa uvádza význam spojený so žiarou a leskom a niekedy sa používa voľnejší preklad typu „žiarivý úsvit“."
+        },
+        {
+          icon: "🔎",
+          title: "Čo je rýdzosť",
+          text:
+            "Rýdzosť hovorí, koľko čistého zlata je v zliatine. Často sa uvádza ako číslo z 1 000 (napríklad 999/1000 znamená takmer čisté zlato). Druhý spôsob zápisu je v karátoch; 24 karátov je takmer čisté zlato."
+        }
+      ]
+    },
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.GOLD_MARKET
   },
@@ -146,6 +502,60 @@ export const questions: Question[] = [
       "1967"
     ],
     explanation_sk: "Rafinéria PAMP (Produits Artistiques Métaux Précieux) bola založená v roku 1977 vo Švajčiarsku.",
+    studyHelp: {
+      meta: { topic: "Rafinérie PAMP", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Základní fakt",
+          text:
+            "Švýcarská rafinérie PAMP (Produits Artistiques Métaux Précieux) byla založena v roce 1977. Sídlo má ve Švýcarsku v kantonu Ticino."
+        },
+        {
+          icon: "🏅",
+          title: "Proč se to uvádí u investičního zlata",
+          text:
+            "Rok založení se používá jako jednoduchý údaj o tradici a důvěryhodnosti rafinerie. PAMP je známá výrobou investičních slitků a uvádí se také v souvislosti s nejvyšší akreditací kvality Good Delivery."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "1997 – ne",
+            "1987 – ne",
+            "1977 – ano",
+            "1967 – ne"
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Rafinéria PAMP", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Základný fakt",
+          text:
+            "Švajčiarska rafinéria PAMP (Produits Artistiques Métaux Précieux) bola založená v roku 1977. Sídlo má vo Švajčiarsku v kantone Ticino."
+        },
+        {
+          icon: "🏅",
+          title: "Prečo sa to uvádza pri investičnom zlate",
+          text:
+            "Rok založenia sa používa ako jednoduchý údaj o tradícii a dôveryhodnosti rafinérie. PAMP je známa výrobou investičných zliatkov a uvádza sa tiež v súvislosti s najvyššou akreditáciou kvality Good Delivery."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "1997 – nie",
+            "1987 – nie",
+            "1977 – áno",
+            "1967 – nie"
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [2],
     category: Category.GOLD_MARKET
   },
@@ -167,6 +577,46 @@ export const questions: Question[] = [
       "Ag"
     ],
     explanation_sk: "Chemická značka striebra je Ag (Argentum).",
+    studyHelp: {
+      meta: { topic: "Chemické značky kovů", readTime: "20 sekund" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Stříbro v chemii",
+          text: "Chemická značka stříbra je Ag. Zlato má značku Au, proto se tyto dvě zkratky často pletou."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "Au – zlato",
+            "Ar – ne (argon)",
+            "Az – ne",
+            "Ag – stříbro"
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Chemické značky kovov", readTime: "20 sekúnd" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Striebro v chémii",
+          text: "Chemická značka striebra je Ag. Zlato má značku Au, preto sa tieto dve skratky často pletú."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "Au – zlato",
+            "Ar – nie (argón)",
+            "Az – nie",
+            "Ag – striebro"
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [3],
     category: Category.GOLD_MARKET
   },
@@ -188,6 +638,80 @@ export const questions: Question[] = [
       "Účet v banke"
     ],
     explanation_sk: "Podielový fond zhromažďuje prostriedky od mnohých investorov a investuje ich do rôznych aktív (akcie, dlhopisy) v rámci kolektívneho investovania.",
+    studyHelp: {
+      meta: { topic: "Podílový fond", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co to je",
+          text: "Podílový fond je způsob, jak společně investuje více lidí. Fond shromáždí peníze investorů a\u00A0správce fondu je podle pravidel fondu investuje do vybraných aktiv."
+        },
+        {
+          icon: "🧩",
+          title: "Jak to funguje v\u00A0praxi",
+          bullets: [
+            "Koupíte podílové listy (podíl) a\u00A0tím se stanete podílníkem fondu.",
+            "Fond může investovat například do akcií, dluhopisů nebo jejich kombinace.",
+            "Hodnota Vašeho podílu se průběžně mění podle toho, jak se daří investicím fondu."
+          ]
+        },
+        {
+          icon: "💳",
+          title: "Poplatky (stručně)",
+          bullets: [
+            "Často se platí jednorázový vstupní poplatek.",
+            "Běžný je také průběžný správcovský poplatek, který se promítá do hodnoty fondu."
+          ]
+        },
+        {
+          icon: "🧾",
+          title: "Daně (obecně)",
+          text: "U\u00A0podílových fondů se v\u00A0praxi často setkáte se zdaněním výnosu sazbou 15\u00A0%. Konkrétní režim ale závisí na typu fondu a\u00A0způsobu výnosu."
+        },
+        {
+          icon: "✅",
+          title: "Jak poznat správnou možnost",
+          text: "Podílový fond není účet v\u00A0bance ani jedna konkrétní akcie. Je to kolektivní investování, kde peníze spravuje fond a\u00A0Vy vlastníte podíl."
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Podielový fond", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo to je",
+          text: "Podielový fond je spôsob, ako spoločne investuje viac ľudí. Fond zhromaždí peniaze investorov a\u00A0správca fondu ich podľa pravidiel fondu investuje do vybraných aktív."
+        },
+        {
+          icon: "🧩",
+          title: "Ako to funguje v\u00A0praxi",
+          bullets: [
+            "Kúpite podielové listy (podiel) a\u00A0tým sa stanete podielnikom fondu.",
+            "Fond môže investovať napríklad do akcií, dlhopisov alebo ich kombinácie.",
+            "Hodnota Vášho podielu sa priebežne mení podľa toho, ako sa darí investíciám fondu."
+          ]
+        },
+        {
+          icon: "💳",
+          title: "Poplatky (stručne)",
+          bullets: [
+            "Často sa platí jednorazový vstupný poplatok.",
+            "Bežný je tiež priebežný správcovský poplatok, ktorý sa premieta do hodnoty fondu."
+          ]
+        },
+        {
+          icon: "🧾",
+          title: "Dane (všeobecne)",
+          text: "Pri podielových fondoch sa v\u00A0praxi často stretnete so zdanením výnosu sadzbou 15\u00A0%. Konkrétny režim ale závisí od typu fondu a\u00A0spôsobu výnosu."
+        },
+        {
+          icon: "✅",
+          title: "Ako spoznať správnu možnosť",
+          text: "Podielový fond nie je účet v\u00A0banke ani jedna konkrétna akcia. Ide o\u00A0kolektívne investovanie, kde peniaze spravuje fond a\u00A0Vy vlastníte podiel."
+        }
+      ]
+    },
     correctAnswerIndices: [2],
     category: Category.GOLD_MARKET
   },
@@ -209,6 +733,70 @@ export const questions: Question[] = [
       "Investičné fondy"
     ],
     explanation_sk: "Bankové vklady sú zo zákona poistené do výšky 100 000 EUR. Investície túto garanciu nemajú.",
+    studyHelp: {
+      meta: { topic: "Ochrana vkladů", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co je Garanční systém",
+          text: "Jde o systém, který má chránit určité typy peněz klientů u finančních institucí. Nejčastěji se tím myslí ochrana bankovních vkladů, aby lidé nepřišli o své úspory při problémech banky."
+        },
+        {
+          icon: "✅",
+          title: "Co je chráněno",
+          bullets: [
+            "Bankovní vklady (peníze na účtu) jsou chráněné do určitého limitu.",
+            "Klíčová hranice je 100 000 EUR."
+          ]
+        },
+        {
+          icon: "⛔",
+          title: "Co chráněno není",
+          bullets: [
+            "Komodity (např. zlato, stříbro).",
+            "Kryptoměny.",
+            "Peníze investované do těchto aktiv nejsou chráněné jako bankovní vklad."
+          ]
+        },
+        {
+          icon: "📌",
+          title: "Příklad z praxe",
+          text: "Při kyperské bankovní krizi (2013) došlo k zásahu státu a částky nad 100 000 EUR byly kráceny (uvádí se zhruba 50–80 % z částky nad tuto hranici)."
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Ochrana vkladov", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo je Garančný systém",
+          text: "Ide o systém, ktorý má chrániť určité typy peňazí klientov u finančných inštitúcií. Najčastejšie sa tým myslí ochrana bankových vkladov, aby ľudia neprišli o svoje úspory pri problémoch banky."
+        },
+        {
+          icon: "✅",
+          title: "Čo je chránené",
+          bullets: [
+            "Bankové vklady (penieze na účte) sú chránené do určitého limitu.",
+            "Kľúčová hranice je 100 000 EUR."
+          ]
+        },
+        {
+          icon: "⛔",
+          title: "Čo chránené nie je",
+          bullets: [
+            "Komodity (napr. zlato, striebro).",
+            "Kryptomeny.",
+            "Peniaze investované do týchto aktív nie sú chránené ako bankový vklad."
+          ]
+        },
+        {
+          icon: "📌",
+          title: "Príklad z praxe",
+          text: "Pri cyperskej bankovej kríze (2013) došlo k zásahu štátu a čiastky nad 100 000 EUR boli krátené (uvádza sa zhruba 50–80 % z čiastky nad túto hranicu)."
+        }
+      ]
+    },
     correctAnswerIndices: [1],
     category: Category.GOLD_MARKET
   },
@@ -230,6 +818,66 @@ export const questions: Question[] = [
       "Sporiaci účet"
     ],
     explanation_sk: "Fyzické zlato, nehnuteľnosti alebo umenie sa považujú za alternatívne investície, ktoré nie sú tradičnými finančnými nástrojmi.",
+    studyHelp: {
+      meta: { topic: "Alternativní investice", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co se tím myslí",
+          text:
+            "Alternativní investice jsou způsoby uložení majetku mimo běžné bankovní a finanční produkty. Často jde o reálná aktiva, která lidé používají jako doplněk k tradičním investicím, například kvůli ochraně hodnoty při nejistotě nebo inflaci."
+        },
+        {
+          icon: "📌",
+          title: "Typické příklady",
+          bullets: [
+            "Fyzické investiční zlato",
+            "Stříbro",
+            "Nemovitosti"
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "Státní dluhopis – tradiční finanční produkt.",
+            "Fyzické zlato – reálné aktivum, často uváděné jako alternativa.",
+            "Akcie – tradiční investice do firem.",
+            "Spořicí účet – bankovní produkt."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Alternatívne investície", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo sa tým myslí",
+          text:
+            "Alternatívne investície sú spôsoby uloženia majetku mimo bežných bankových a finančných produktov. Často ide o reálne aktíva, ktoré ľudia používajú ako doplnok k tradičným investíciám, napríklad kvôli ochrane hodnoty pri neistote alebo inflácii."
+        },
+        {
+          icon: "📌",
+          title: "Typické příklady",
+          bullets: [
+            "Fyzické investičné zlato",
+            "Striebro",
+            "Nehnuteľnosti"
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "Štátny dlhopis – tradičný finančný produkt.",
+            "Fyzické zlato – reálne aktívum, často uvádzané ako alternatíva.",
+            "Akcie – tradičná investícia do firiem.",
+            "Sporiaci účet – bankový produkt."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [1],
     category: Category.GOLD_MARKET
   },
@@ -251,6 +899,60 @@ export const questions: Question[] = [
       "Akcie malej technologickej firmy"
     ],
     explanation_sk: "Akcie malých firiem (start-upov) nesú vysoké riziko volatility a krachu oproti bankovým vkladom alebo štátnym dlhopisom.",
+    studyHelp: {
+      meta: { topic: "Investiční riziko", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co se myslí investičním rizikem",
+          text:
+            "Investiční riziko se popisuje hlavně jako riziko protistrany: že subjekt, kterému svěříte peníze (banka, stát, emitent), zkrachuje nebo nedodrží závazky. Patří sem i kolísání hodnoty (volatilita) a znehodnocení kupní síly vlivem inflace."
+        },
+        {
+          icon: "⚖️",
+          title: "Proč jsou některé produkty méně rizikové",
+          bullets: [
+            "Spořicí produkty se obvykle řadí mezi konzervativní nástroje (slouží jako rezerva).",
+            "Akcie patria mezi dynamické investice: cílí na vyšší výnos, ale nesou výrazně vyšší riziko spojené s trhem a hospodařením firmy."
+          ]
+        },
+        {
+          icon: "📈",
+          title: "Co je typické pro akcie malých firem",
+          bullets: [
+            "Nesete přímé riziko krachu emitenta (bankrotu firmy).",
+            "V době krize a nejistoty papírová aktiva jako akcie často ztrácejí hodnotu a investor nese plné riziko neúspěchu společnosti."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Investičné riziko", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo sa myslí investičným rizikom",
+          text:
+            "Investičné riziko sa popisuje hlavne ako riziko protistrany: že subjekt, ktorému zveríte peniaze (banka, štát, emitent), zkrachuje alebo nedodrží záväzky. Patří sem aj kolísanie hodnoty (volatilita) a znehodnotenie kúpnej sily vlivem inflácie."
+        },
+        {
+          icon: "⚖️",
+          title: "Prečo sú niektoré produkty menej rizikové",
+          bullets: [
+            "Sporiace produkty sa obvykle radia medzi konzervatívne nástroje (slúžia ako rezerva).",
+            "Akcie patria medzi dynamické investície: cielia na vyšší výnos, ale nesou výrazne vyššie riziko spojené s trhom a hospodarením firmy."
+          ]
+        },
+        {
+          icon: "📈",
+          title: "Čo je typické pre akcie malých firiem",
+          bullets: [
+            "Nesiete priame riziko krachu emitenta (bankrotu firmy).",
+            "V čase krízy a neistoty papierové aktíva ako akcie často strácajú hodnotu a investor nesie plné riziko neúspechu spoločnosti."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [3],
     category: Category.GOLD_MARKET
   },
@@ -266,12 +968,78 @@ export const questions: Question[] = [
     explanation: "Standardem u fondů je manažerský (správcovský) poplatek (management fee), který se strhává průběžně z objemu majetku.",
     text_sk: "Aký poplatok si bežne účtujú podielové fondy?",
     options_sk: [
-      "Správcovský poplatok z objemu majetku",
+      "Správcovský poplatek z objemu majetku",
       "Iba vstupný poplatok",
-      "Poplatok pri výplate výnosu",
+      "Poplatek pri výplate výnosu",
       "Žiadny, sú zadarmo"
     ],
     explanation_sk: "Štandardom pri fondoch je manažérsky (správcovský) poplatok (management fee), ktorý sa strháva priebežne z objemu majetku.",
+    studyHelp: {
+      meta: { topic: "Poplatky u podílových fondů", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co je správcovský poplatek",
+          text: "Správcovský poplatek je standardní poplatek za správu investice. Platí se průběžně za to, že někdo majetek spravuje, drží a administruje."
+        },
+        {
+          icon: "📌",
+          title: "Jak se počítá",
+          bullets: [
+            "Počítá se procentem z aktuální hodnoty majetku (zůstatku).",
+            "Často je uveden jako roční sazba, ale ve skutečnosti se strhává průběžně (typicky denně) z aktuální hodnoty.",
+            "Poplatek se odečítá přímo z investice – neplatí se zvlášť převodem z účtu."
+          ]
+        },
+        {
+          icon: "👀",
+          title: "Proč si ho lidé často nevšimnou",
+          text: "Protože se neplatí „navíc“, ale snižuje průběžně hodnotu investice. U investic vedených v jednotkách (např. u zlata) se může projevit i jako postupné snížení množství jednotek."
+        },
+        {
+          icon: "⚠️",
+          title: "Co to není",
+          bullets: [
+            "Není to vstupní poplatek (ten bývá jednorázový na začátku).",
+            "Není to poplatek pouze při výběru (např. výkonnostní poplatek z výnosu).",
+            "Není automaticky „zdarma“, pokud to není výslovně uvedeno jako akce nebo podmínka."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Poplatky pri podielových fondoch", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo je správcovský poplatok",
+          text: "Správcovský poplatek je štandardný poplatok za správu investície. Platí sa priebežne za to, že niekto majetok spravuje, drží a administruje."
+        },
+        {
+          icon: "📌",
+          title: "Ako sa počíta",
+          bullets: [
+            "Počíta sa percentom z aktuálnej hodnoty majetku (zostatku).",
+            "Často je uvedený ako ročná sadzba, ale v skutočnosti sa strháva priebežne (typicky denne) z aktuálnej hodnoty.",
+            "Poplatek sa odpočítava priamo z investície – neplatí sa zvlášť prevodom z účtu."
+          ]
+        },
+        {
+          icon: "👀",
+          title: "Prečo si ho ľudia často nevšimnú",
+          text: "Pretože sa neplatí „navyše“, ale znižuje priebežne hodnotu investície. Pri investíciách vedených v jednotkách (napr. pri zlate) sa môže prejaviť aj ako postupné zníženie množstva jednotiek."
+        },
+        {
+          icon: "⚠️",
+          title: "Čo to nie je",
+          bullets: [
+            "Nie je to vstupný poplatok (ten býva jednorazový na začiatku).",
+            "Nie je to poplatok iba pri výbere (napr. výkonnostný poplatek z výnosu).",
+            "Nie je automaticky „zadarmo“, ak to nie je výslovne uvedené ako akcia alebo podmienka."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [0],
     category: Category.GOLD_MARKET
   },
@@ -284,7 +1052,7 @@ export const questions: Question[] = [
       "Dluhopisy zakoupené přímo od státu",
       "Investice do podílových fondů"
     ],
-    explanation: "U podílových fondů se typicky platí vstupní poplatek (entry fee) z investované částky.",
+    explanation: "U podílových fondů se typicky platí vstupní poplatek z investované částky.",
     text_sk: "Ktorá forma investície obvykle zahŕňa vstupný poplatok?",
     options_sk: [
       "Sporiaci účet",
@@ -292,7 +1060,63 @@ export const questions: Question[] = [
       "Dlhopisy zakúpené priamo od štátu",
       "Investícia do podielových fondov"
     ],
-    explanation_sk: "Pri podielových fondoch sa typicky platí vstupný poplatok (entry fee) z investovanej čiastky.",
+    explanation_sk: "Pri podielových fondoch sa typicky platí vstupný poplatok z investovanej čiastky.",
+    studyHelp: {
+      meta: { topic: "Vstupní poplatek", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co je vstupní poplatek",
+          text: "Vstupní poplatek je jednorázový náklad spojený se založením investice nebo spořicího programu. Nejčastěji se objevuje u spravovaných investic (například některé spořicí plány nebo podílové fondy), zatímco běžné bankovní účty se obvykle zakládají bez tohoto typu poplatku."
+        },
+        {
+          icon: "📌",
+          title: "Jak se účtuje",
+          bullets: [
+            "Poplatek může být stržen z první platby nebo rozložen do prvních vkladů.",
+            "U některých programů může fungovat jako vratná záloha a vrací se při splnění předem daných podmínek."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "Spořicí účet – obvykle bez vstupního poplatku.",
+            "Nákup investiční nemovitosti – řeší se jiné typy nákladů, ne vstupní poplatek tohoto druhu.",
+            "Dluhopisy zakoupené přímo od státu – typicky bez vstupního poplatku.",
+            "Investice do podílových fondů – často se u nich vstupní poplatek uvádí."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Vstupný poplatok", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo je vstupný poplatok",
+          text: "Vstupný poplatok je jednorazový náklad spojený so založením investície alebo sporiaceho programu. Najčastejšie sa objavuje pri spravovaných investíciách (napríklad niektoré sporiace plány alebo podielové fondy), zatiaľ čo bežné bankové účty sa zvyčajne zakladajú bez tohto typu poplatku."
+        },
+        {
+          icon: "📌",
+          title: "Ako sa zvyčajne účtuje",
+          bullets: [
+            "Poplatok môže byť strhnutý z prvej platby alebo rozložený do prvých vkladov.",
+            "Pri niektorých programoch môže fungovať ako vratná záloha a vracia sa pri splnení vopred daných podmienok."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "Sporiaci účet – zvyčajne bez vstupného poplatku.",
+            "Nákup investičnej nehnuteľnosti – riešia sa iné náklady než vstupný poplatok tohto druhu.",
+            "Dlhopisy zakúpené priamo od štátu – typicky bez vstupného poplatku.",
+            "Investícia do podielových fondov – často sa pri nich vstupný poplatok uvádza."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [3],
     category: Category.GOLD_MARKET
   },
@@ -310,16 +1134,80 @@ export const questions: Question[] = [
     options_sk: [
       "Vyšší výnos znamená vždy nižšie riziko",
       "Nižšie riziko znamená vždy vyšší výnos",
-      "Výnos a riziko spolu nesúvisia",
+      "Výnos and riziko spolu nesúvisia",
       "Vyšší výnos je obvykle spojený s vyšším rizikom"
     ],
-    explanation_sk: "Základné pravidlo investovania: potenciál vyššieho výnosu je vykúpený vyšším rizikom kolísania hodnoty.",
+    explanation_sk: "Základné pravidlo investovania: potenciál vyššieho výnosu je vykúpený vyšším rizkom kolísania hodnoty.",
+    studyHelp: {
+      meta: { topic: "Vztah výnosu a rizika", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co to znamená",
+          text: "V investování se běžně rozlišuje konzervativní a dynamicý přístup podle profilu klienta. Konzervativní nástroje slouží spíše jako bezpečná rezerva, zatímco dynamicější nástroje míří na vyšší výnos, ale nesou i vyšší riziko."
+        },
+        {
+          icon: "⚖️",
+          title: "Proč vyšší výnos obvykle znamená vyšší riziko",
+          bullets: [
+            "Vyšší výnos je „vykoupen“ nejistotou a kolísáním hodnoty.",
+            "U finančních produktů se přidávají rizika finančního systému (např. riziko protistrany – krach emitenta nebo banky).",
+            "Do hry vstupuje i inflační znehodnocení, pokud výnos nepokrývá růst cen."
+          ]
+        },
+        {
+          icon: "🟡",
+          title: "Poznámka k fyzickému zlatu",
+          text: "Fyzické zlato se v tomto kontextu popisuje hlavně jako pojistka a uchovatel hodnoty. Růst ceny může být bonus, ale nejde o garantovaný úrok jako u některých finančních produktů."
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly a varování",
+          bullets: [
+            "Představa, že existuje vysoké zhodnocení bez rizika. Slib „garantovaného“ vysokého výnosu (např. 4 % ročně) může být varovný signál podvodného schématu (Ponzi) a extrémního rizika ztráty vkladu.",
+            "Záměna investičního zlata za nástroj pro rychlý spekulativní zisk – jeho role je spíše stabilita a snížení rizika."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Vzťah výnosu a rizika", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo to znamená",
+          text: "V investovaní sa bežne rozlišuje konzervatívny a dynamický prístup podľa profilu klienta. Konzervatívne nástroje slúžia skôr ako bezpečná rezerva, zatiaľ čo dynamickejšie nástroje mieri na vyšší výnos, ale nesú aj vyššie riziko."
+        },
+        {
+          icon: "⚖️",
+          title: "Prečo vyšší výnos zvyčajne znamená vyššie riziko",
+          bullets: [
+            "Vyšší výnos je „vykúpený“ neistotou a kolísaním hodnoty.",
+            "Pri finančných produktoch sa pridávajú riziká finančného systému (napr. riziko protistrany – krach emitenta alebo banky).",
+            "Do hry vstupuje aj inflačné znehodnotenie, ak výnos nepokrýva rast cien."
+          ]
+        },
+        {
+          icon: "🟡",
+          title: "Poznámka k fyzickému zlatu",
+          text: "Fyzické zlato sa v tomto kontexte popisuje hlavně ako poistka a uchovávateľ hodnoty. Rast ceny môže byť bonus, ale nejde o garantovaný úrok ako pri niektorých finančných produktoch."
+        },
+        {
+          icon: "⚠️",
+          title: "Časté omyly a varovania",
+          bullets: [
+            "Predstava, že existuje vysoké zhodnotenie bez rizika. Sľub „garantovaného“ vysokého výnosu (napr. 4 % ročne) môže být varovný signál podvodnej schémy (Ponzi) a extrémneho rizika straty vkladu.",
+            "Zámena investičného zlata za nástroj pre rýchly špekulatívny zisk – jeho rola je skôr stabilita a zníženie rizika."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [3],
     category: Category.GOLD_MARKET
   },
   {
     id: 89,
-    text: "Jaký typ poplatku se může vyskytnout při nákupu ETF přes burzu?",
+    text: "Aký typ poplatku sa môže vyskytnúť pri nákupe ETF cez burzu?",
     options: [
       "Daň z výnosu předem",
       "Poplatek za zprostředkování (transakční poplatek brokera)",
@@ -332,9 +1220,63 @@ export const questions: Question[] = [
       "Daň z výnosu vopred",
       "Poplatok za sprostredkovanie (transakčný poplatok brokera)",
       "Poplatok za konverziu meny",
-      "Správcovský poplatok v banke"
+      "Správcovský poplatek v banke"
     ],
-    explanation_sk: "Pri nákupe na burze sa platí brokerovi poplatok za vykonanie obchodu (komisia) a prípadne konverzia meny.",
+    explanation_sk: "Pri nákupe na burze sa platí brokerovi poplatek za vykonanie obchodu (komisia) a prípadne konverzia meny.",
+    studyHelp: {
+      meta: { topic: "ETF přes burzu – poplatky", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Jaké náklady se řeší při nákupu",
+          text:
+            "Při nákupu ETF se typicky řeší náklad spojený s provedením obchodu. V praxi se to projeví jako transakční poplatek (komise), který se strhne při zadání a realizaci pokynu."
+        },
+        {
+          icon: "💱",
+          title: "Měna obchodu a konverze",
+          text:
+            "ETF se často nakupují v měnách jako EUR nebo USD. Pokud nakupujete v jiné měně, než v jaké máte prostředky, může vzniknout náklad na směnu měny (konverzi)."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (co z toho dává smysl)",
+          bullets: [
+            "A) Daň z výnosu předem – při samotném nákupu se daň běžně neplatí. Daně se řeší až z výnosu (napr. při prodeji nebo u dividend).",
+            "B) Poplatek za zprostředkování – při nákupu přes burzu se obvykle platí poplatek za provedení obchodu (komise/transakční poplatek).",
+            "C) Poplatek za konverzi měny – může vzniknout, pokud nakupujete ETF v jiné měně, než v jaké máte peníze (směna měny).",
+            "D) Správcovský poplatek v bance – to není typický poplatek za samotný nákup ETF na burze; správa ETF se řeší jinými náklady (např. průběžnými náklady fondu)."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "ETF cez burzu – poplatky", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Aké náklady sa riešia pri nákupe",
+          text:
+            "Pri nákupe ETF sa typicky rieši náklad spojený s vykonaním obchodu. V praxi se to prejaví ako transakčný poplatek (komisia), ktorý sa strhne pri zadaní a realizácii pokynu."
+        },
+        {
+          icon: "💱",
+          title: "Mena obchodu a konverzia",
+          text:
+            "ETF sa často nakupujú v menách ako EUR alebo USD. Ak nakupujete v inej mene, než v akej máte prostriedky, môže vzniknúť náklad na zmenu meny (konverziu)."
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (čo z toho dáva zmysel)",
+          bullets: [
+            "A) Daň z výnosu vopred – pri samotnom nákupe sa daň bežne neplatí. Dane sa riešia až z výnosu (napr. pri predaji alebo pri dividendách).",
+            "B) Poplatok za sprostredkovanie – pri nákupe cez burzu sa zvyčajne platí poplatok za vykonanie obchodu (komisia/transakčný poplatok).",
+            "C) Poplatok za konverziu meny – môže vzniknúť, ak nakupujete ETF v inej mene, než v akej máte peniaze (zmena meny).",
+            "D) Správcovský poplatek v banke – to nie je typický poplatek za samotný nákup ETF na burze; správa ETF se rieši inými nákladmi (napr. priebežnými nákladmi fondu)."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [1, 2],
     category: Category.GOLD_MARKET
   },
@@ -352,10 +1294,68 @@ export const questions: Question[] = [
     options_sk: [
       "Sadzba inflácie",
       "Doba trvania zmluvy",
-      "Časový rámec, počas ktorého plánujeme investíciu držať",
+      "Časový rámec, počas ktorého plánujeme investíciu držat",
       "Obdobie pred dôchodkom"
     ],
     explanation_sk: "Investičný horizont je doba, na ktorú investor plánuje svoje prostriedky investovať, aby dosiahol svoje ciele.",
+    studyHelp: {
+      meta: { topic: "Investiční horizont", readTime: "1 minuta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Co to je",
+          text:
+            "Investiční horizont je časové období, po které člověk plánuje investici držet nebo pravidelně nakupovat. Pomáhá určit, zda jde spíše o střednědobý plán (na několik let) nebo dlouhodobý plán (na delší dobu, např. pro budoucí cíle)."
+        },
+        {
+          icon: "📌",
+          title: "Proč na tom záleží",
+          bullets: [
+            "Podle délky horizontu se volí strategie a typ produktu.",
+            "Při delším horizontu a pravidelných nákupech dochází k průměrování nákupní ceny, což může snižovat dopad krátkodobých výkyvů."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rychlý přehled)",
+          bullets: [
+            "A) Sazba inflace – to je ekonomický ukazatel, ne časový plán investice.",
+            "B) Doba trvání smlouvy – nemusí být totožná s tím, jak dlouho chcete investici držet.",
+            "C) Časový rámec, po který plánujeme investici držet – vystihuje význam pojmu.",
+            "D) Období před důchodem – je to jen příklad dlouhodobého cíle, ne definice."
+          ]
+        }
+      ]
+    },
+    studyHelp_sk: {
+      meta: { topic: "Investičný horizont", readTime: "1 minúta" },
+      sections: [
+        {
+          icon: "ℹ️",
+          title: "Čo to je",
+          text:
+            "Investičný horizont je časové obdobie, počas ktorého človek plánuje investíciu držať alebo pravidelne nakupovať. Pomáhá určiť, či ide skôr o strednodobý plán (na niekoľko rokov) alebo dlhodobý plán (na dlhšiu dobu, např. pre budúce ciele)."
+        },
+        {
+          icon: "📌",
+          title: "Prečo na tom záleží",
+          bullets: [
+            "Podľa dĺžky horizontu sa volí stratégia a typ produktu.",
+            "Pri dlhšom horizonte a pravidelných nákupoch dochádza k priemerovaniu nákupnej ceny, čo môže znižovať dopad krátkodobých výkyvov."
+          ]
+        },
+        {
+          icon: "✅",
+          title: "Možnosti (rýchly prehľad)",
+          bullets: [
+            "A) Sadzba inflácie – to je ekonomický ukazovateľ, nie časový plán investície.",
+            "B) Doba trvania zmluvy – nemusí byť totožná s tým, ako dlho chcete investíciu držať.",
+            "C) Časový rámec, počas ktorého plánujeme investíciu držať – vystihuje význam pojmu.",
+            "D) Obdobie pred dôchodkom – je to len príklad dlhodobého cieľa, nie definícia."
+          ]
+        }
+      ]
+    },
     correctAnswerIndices: [2],
     category: Category.GOLD_MARKET
   },
@@ -370,7 +1370,7 @@ export const questions: Question[] = [
       "Byla založena v roce 1998",
       "Je oficiálním autorizovaným partnerem švýcarské rafinérie PAMP a britské královské mincovny The Royal Mint"
     ],
-    explanation: "IBIS InGold působí na trhu již od roku 1998 a má přes 100 000 zákazníků. Je přímým partnerem prestižních výrobců PAMP a The Royal Mint a svým klientům smluvně garantuje zpětný výkup.",
+    explanation: "IBIS InGold působí na trhu již od roku 1998 a má přes 100 000 zákazníků. Je přímým partnerem prestižních výrobců PAMP a The Royal Mint and svým klientům smluvně garantuje zpětný výkup.",
     text_sk: "Čo je pravdivé tvrdenie o spoločnosti IBIS InGold?",
     options_sk: [
       "Má viac ako 100 000 zákazníkov",
@@ -378,7 +1378,7 @@ export const questions: Question[] = [
       "Bola založená v roku 1998",
       "Je oficiálnym autorizovaným partnerom švajčiarskej rafinérie PAMP a britskej kráľovskej mincovne The Royal Mint"
     ],
-    explanation_sk: "IBIS InGold pôsobí na trhu už od roku 1998 a má vyše 100 000 zákazníkov. Je priamym partnerom prestížnych výrobcov PAMP a The Royal Mint a svojim klientom zmluvne garantuje spätný výkup.",
+    explanation_sk: "IBIS InGold pôsobí na trhu už od roku 1998 a má vyše 100 000 zákazníků. Je priamym partnerem prestížnych výrobcov PAMP a The Royal Mint a svojim klientom zmluvne garantuje spätný výkup.",
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.PRODUCTS
   },
@@ -389,12 +1389,12 @@ export const questions: Question[] = [
       "Pokud má klient slitky a mince u sebe, může je po domluvě doručit k výkupu osobně na centrálu společnosti IBIS InGold",
       "Pokud má klient slitky a mince v depozitu u IBIS InGold, zašle úředně ověřenou žádost o výkup společnosti IBIS InGold",
       "Pokud má klient slitky a mince u sebe, zašle je v pojištěné bezpečnostní obálce spolu s žádostí o výkup společnosti IBIS InGold",
-      "IBIS InGold pošle pověřené pracovníky k výkupu přímo ke klientovi domů, kde slitky a mince převezmou a doručí na centrálu IBIS InGold"
+      "IBIS InGold pošle poverených pracovníkov k výkupu přímo ke klientovi domů, kde slitky a mince převezmou a doručí na centrálu IBIS InGold"
     ],
     explanation: "Výkup je flexibilní: zboží z depozitu lze prodat na základě ověřené žádosti. Fyzicky držené zboží lze doručit osobně na centrálu nebo zaslat poštou v bezpečnostní obálce.",
     text_sk: "Ako prebieha spätný výkup v spoločnosti IBIS InGold?",
     options_sk: [
-      "Ak má klient zliatky a mince u seba, môže ich po dohovore doručiť na výkup osobne na centrálu spoločnosti IBIS InGold",
+      "Ak má klient zliatky a mince u seba, môže ich po dohovore doručiť na výkup osone na centrálu spoločnosti IBIS InGold",
       "Ak má klient zliatky a mince v depozite u IBIS InGold, zašle úradne overenú žiadosť o výkup spoločnosti IBIS InGold",
       "Ak má klient zliatky a mince u seba, zašle ich v poistenej bezpečnostnej obálke spolu so žiadosťou o výkup spoločnosti IBIS InGold",
       "IBIS InGold pošle poverených pracovníkov na výkup priamo ku klientovi domov, kde zliatky a mince prevezmú a doručia na centrálu IBIS InGold"
@@ -405,7 +1405,7 @@ export const questions: Question[] = [
   },
   {
     id: 8,
-    text: "Co když zkrachuje společnost IBIS InGold?",
+    text: "Čo keď skrachuje spoločnosť IBIS InGold?",
     options: [
       "Pokud by došlo k úpadku společnosti IBIS InGold, pak by klienti jistě o všechno přišli",
       "Pokud by došlo k úpadku společnosti IBIS InGold, pak by byli klienti odškodněni fondem pojištění vkladů",
@@ -413,12 +1413,11 @@ export const questions: Question[] = [
       "Pokud by došlo k úpadku společnosti IBIS InGold, pak by byli klienti odškodněni rafinérií PAMP a mincovnou The ROYAL MINT"
     ],
     explanation: "V případě úpadku obchodní společnosti jsou klienti věřiteli a jsou uspokojováni z majetkové podstaty v rámci insolvenčního řízení.",
-    text_sk: "Čo keď skrachuje spoločnosť IBIS InGold?",
+    text_sk: "Ak by došlo k úpadku spoločnosti IBIS InGold, potom by klienti určite o všetko prišli",
     options_sk: [
-      "Ak by došlo k úpadku spoločnosti IBIS InGold, potom by klienti určite o všetko prišli",
       "Ak by došlo k úpadku spoločnosti IBIS InGold, potom by boli klienti odškodnení fondom ochrany vkladov",
       "Ak by došlo k úpadku spoločnosti IBIS InGold, potom budú klienti uspokojovaní z výťažku konkurzného konania, a to v peniazoch",
-      "Ak by došlo k úpadku spoločnosti IBIS InGold, potom by boli klienti odškodnení rafinériou PAMP a mincovňou The ROYAL MINT"
+      "Ak by došlo k úpadku spoločnosti IBIS InGold, potom by boli klienti odškodnení rafinériou PAMP and mincovňou The ROYAL MINT"
     ],
     explanation_sk: "V prípade úpadku obchodnej spoločnosti sú klienti veriteľmi a sú uspokojovaní z majetkovej podstaty v rámci insolvenčného konania.",
     correctAnswerIndices: [2],
@@ -462,7 +1461,7 @@ export const questions: Question[] = [
       "Nákupná cena dohodnutá v objednávke je garantovaná 3 prevádzkové dni, po tejto lehote je cena stanovená podľa aktuálnej ceny",
       "Nákupná cena dohodnutá v objednávke je garantovaná 1 prevádzkový deň, po tejto lehote je cena stanovená podľa aktuálnej ceny"
     ],
-    explanation_sk: "Pre menšie objednávky do 4 000 EUR je cena garantovaná 1 prevádzkový deň, aby klient stihol vykonať platbu a cena sa nezmenila.",
+    explanation_sk: "Pre menšie objednávky do 4 000 EUR je cena garantovaná 1 prevádzkový deň, aby klient stihl vykonať platbu a cena se nezmenila.",
     correctAnswerIndices: [3],
     category: Category.PRODUCTS
   },
@@ -479,11 +1478,11 @@ export const questions: Question[] = [
     text_sk: "Akým spôsobom sa klientovi vráti prípadný preplatok pri Jednorazovom nákupe v e-shope IBIS InGold?",
     options_sk: [
       "Na vrátenie prípadného preplatku nemá klient žiadny nárok",
-      "Preplatok bude evidovaný a bude započítaný na úhradu ďalšej objednávky klienta",
-      "Preplatok bude klientovi poukázaný na bankový účet, z ktorého bola platba odoslaná, na základe jeho písomnej žiadosti s overeným podpisom zaslanej na centrálu spoločnosti IBIS InGold",
+      "Preplatok bude evitovaný a bude započítaný na úhradu ďalšej objednávky klienta",
+      "Preplatok bude klientovi poukázán na bankový účet, z ktorého bola platba odoslaná, na základe jeho písomnej žiadosti s overeným podpisom zaslanej na centrálu spoločnosti IBIS InGold",
       "Preplatok bude klientovi automaticky poukázaný na bankový účet, z ktorého bola platba odoslaná"
     ],
-    explanation_sk: "Z bezpečnostných dôvodov (AML) sa preplatky vracajú na základe písomnej a overenej žiadosti na účet odosielateľa.",
+    explanation_sk: "Z bezpečnostných dôvodov (AML) se preplatky vracajú na záklace písomnej a overenej žiadosti na účet odosielateľa.",
     correctAnswerIndices: [2],
     category: Category.PRODUCTS
   },
@@ -492,11 +1491,11 @@ export const questions: Question[] = [
     text: "Co to je VERISCAN™ a jaké je pravdivé tvrzení o něm?",
     options: [
       "V České republice ji poprvé představila společnost IBIS InGold",
-      "Tato technologie je prvním bezpečnostním systémem pro investiční kovy na světě",
+      "Tato technológia je prvním bezpečnostním systémem pro investiční kovy na světě",
       "VERISCAN™ je stejně spolehlivý jako drahé laboratorní přístroje",
       "VERISCAN™ je unikátní nedestruktivní technologie, která umožňuje okamžité a bezpečné ověření pravosti investičních zlatých slitků a mincí pocházejících ze švýcarské rafinérie PAMP"
     ],
-    explanation: "VERISCAN™ je revoluční nedestruktivní technologie pro ověření pravosti, kterou IBIS InGold uvedl na český trh jako první. Je spolehlivá jako laboratorní přístroje a funguje pro slitky PAMP.",
+    explanation: "VERISCAN™ je revoluční nedestruktivní technologie pro ověření pravosti, kterou IBIS InGold uvedl na český trh jako první. Je spolehlivá jako laboratorní přístroje a funguje for slitky PAMP.",
     text_sk: "Čo to je VERISCAN™ a aké je pravdivé tvrdenie o ňom?",
     options_sk: [
       "V Českej republike ju prvýkrát predstavila spoločnosť IBIS InGold",
@@ -504,7 +1503,7 @@ export const questions: Question[] = [
       "VERISCAN™ je rovnako spoľahlivý ako drahé laboratórne prístroje",
       "VERISCAN™ je unikátna nedeštruktívna technológia, ktorá umožňuje okamžité a bezpečné overenie pravosti investičných zlatých zliatkov a mincí pochádzajúcich zo švajčiarskej rafinérie PAMP"
     ],
-    explanation_sk: "VERISCAN™ je revolučná nedeštruktívna technológia na overenie pravosti, ktorú IBIS InGold uviedol na český trh ako prvý. Je spoľahlivá ako laboratórne prístroje a funguje pre zliatky PAMP.",
+    explanation_sk: "VERISCAN™ je revolučná nedeštruktívna technológia na overenie pravosti, ktorú IBIS InGold uviedol na český trh ako prvý. Je spoľahlivá jako laboratórne prístroje a funguje pre zliatky PAMP.",
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.PRODUCTS
   },
@@ -513,35 +1512,34 @@ export const questions: Question[] = [
     text: "Co je pravdivé tvrzení o britské královské mincovně The Royal Mint?",
     options: [
       "Řadí se mezi největší a technicky nejmodernější mincovny na světě",
-      "The Royal Mint je státní mincovna a je zcela ve vlastnictví Státní pokladny Jeho veličenstva",
+      "The Royal Mint je štátna mincovňa a je úplne vo vlastníctve Štátnej pokladnice Jeho veličenstva",
       "Její zlaté mince Britannia s ryzostí 999,9 jsou díky svým ochranným prvkům vizuálně nejbezpečnějšími mincemi na světě",
       "The Royal Mint byla založena v roce 886"
     ],
-    explanation: "The Royal Mint je jednou z nejmodernějších mincoven, založena byla již v roce 886 a je vlastněna britskou státní pokladnou. Její mince Britannia patří k nejbezpečnějším díky pokročilým ochranným prvkům.",
+    explanation: "The Royal Mint je jednou z nejmodernějších mincoven, založena byla již v roce 886 a je vlastněna britskou státní pokladnou. Její mince Britannia patří k nejbezpečnějším díky pokročilým ochranným prům.",
     text_sk: "Čo je pravdivé tvrdenie o britskej kráľovskej mincovni The Royal Mint?",
     options_sk: [
       "Radí sa medzi najväčšie a technicky najmodernejšie mincovne na svete",
       "The Royal Mint je štátna mincovňa a je úplne vo vlastníctve Štátnej pokladnice Jeho veličenstva",
-      "Jej zlaté mince Britannia s rýdzosťou 999,9 sú vďaka svojim ochranným prvkom vizuálne najbezpečnejšími mincami na svete",
-      "The Royal Mint bola založená v roku 886"
+      "Její zlaté mince Britannia s rýdzosťou 999,9 sú vďaka svojim ochranným prvkom vizuálne najbezpečnejšími mincami na svetle",
+      "The Royal Mint bola založená v roce 886"
     ],
-    explanation_sk: "The Royal Mint je jednou z najmodernejších mincovní, založená bola už v roku 886 a je vlastnená britskou štátnou pokladnicou. Jej mince Britannia patria k najbezpečnejším vďaka pokročilým ochranným prvkom.",
+    explanation_sk: "The Royal Mint je jednou z najmodernejších mincovní, založená bola už v roku 886 a je vlastnená britskou štátnou pokladnicou. Jej mince Britannia patria k najbezpečnejším vďaka pokročilým ochranným prům.",
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.PRODUCTS
   },
   {
     id: 17,
-    text: "Kdy může vzniknout nedoplatek u Jednorázového nákupu v e-shopu IBIS InGold?",
+    text: "Kedy může vzniknúť nedoplatok pri Jednorazovom nákupe v e-shope IBIS InGold?",
     options: [
-      "Nedoplatek u Jednorázového nákupu nemůže vzniknout",
+      "Nedoplatok u Jednorázového nákupu nemůže vzniknout",
       "Klient uhradí nižší cenu než je fixovaná cena při zpracování jeho platby za objednané zboží",
       "Nedoplatek u Jednorázového nákupu může vzniknout pouze chybou společnosti IBIS InGold",
       "Klient uhradí vyšší cenu než je cena platná při zpracování jeho platby za objednané zboží"
     ],
     explanation: "Nedoplatek vzniká, pokud klient pošle méně peněz, než je cena fixovaná při zpracování. Vzniknout může také chybou, ale systém je nastaven na přesné párování.",
-    text_sk: "Kedy môže vzniknúť nedoplatok pri Jednorazovom nákupe v e-shope IBIS InGold?",
+    text_sk: "Nedoplatok pri Jednorazovom nákupe nemôže vzniknúť",
     options_sk: [
-      "Nedoplatok pri Jednorazovom nákupe nemôže vzniknúť",
       "Klient uhradí nižšiu cenu ako je fixovaná cena pri spracovaní jeho platby za objednaný tovar",
       "Nedoplatok pri Jednorazovom nákupe môže vzniknúť iba chybou spoločnosti IBIS InGold",
       "Klient uhradí vyššiu cenu ako je cena platná pri spracovaní jeho platby za objednaný tovar"
@@ -602,9 +1600,8 @@ export const questions: Question[] = [
       "Z bankovního účtu Kupujícího uvedeného v návrhu smlouvy"
     ],
     explanation: "První platba slouží k identifikaci klienta, proto musí odejít z účtu majitele (nebo manžela/ky), aby se ověřila identita dle AML.",
-    text_sk: "Z akého bankového účtu môže klient uhradiť prvú platbu pre akceptáciu návrhu zmluvy vo výške minimálne 4 EUR?",
+    text_sk: "Z bankového účtu Kupujúceho, Manžela/ky uvedeného v návrhu zmluvy",
     options_sk: [
-      "Z bankového účtu Kupujúceho, Manžela/ky uvedeného v návrhu zmluvy",
       "Z bankového účtu Kupujúceho, Manžela/ky, Partnera/ky, Právneho zástupcu uvedeného v návrhu zmluvy",
       "Z bankového účtu Kupujúceho, Manžela/ky, Partnera/ky uvedeného v návrhu zmluvy",
       "Z bankového účtu Kupujúceho uvedeného v návrhu zmluvy"
@@ -617,12 +1614,12 @@ export const questions: Question[] = [
     id: 24,
     text: "Jaká nákupní cena slitků a mincí bude platná pro fixaci na váhovém kontě, pokud IBIS InGold obdrží platbu s korektním variabilním symbolem, resp. číslem smlouvy, od klienta v sobotu v 16:00 hodin?",
     options: [
-      "Cena slitků a mincí uveřejněná v e-shopu následující pondělí po 18:00 hodině",
+      "Cena slitků a mincí uveřejněnée v e-shopu následující pondělí po 18:00 hodině",
       "Cena slitků a mincí uveřejněná v e-shopu minulý pátek po 11:00 hodině",
       "Cena slitků a mincí uveřejněná v e-shopu minulý pátek po 18:00 hodině",
       "Cena slitků a mincí uveřejněná v e-shopu ve stejný den v sobotu v 11:00 hodin"
     ],
-    explanation: "Platby o víkendu se zpracují a fixují až při nejbližším obchodním dni a příslušné fixaci, což je pondělí podvečer.",
+    explanation: "Platby o víkendu se zpracují and fixují až při nejbližším obchodním dni a příslušné fixaci, což je pondělí podvečer.",
     text_sk: "Aká nákupná cena zliatkov a mincí bude platná pre fixáciu na váhovom konte, ak IBIS InGold dostane platbu s korektným variabilným symbolom, resp. číslom zmluvy, od klienta v sobotu o 16:00 hodín?",
     options_sk: [
       "Cena zliatkov a mincí uverejnená v e-shope nasledujúci pondelok po 18:00 hodine",
@@ -636,11 +1633,11 @@ export const questions: Question[] = [
   },
   {
     id: 31,
-    text: "Proč musí být zlaté slitky PAMP při zpětném výkupu v původním obalu?",
+    text: "Proč must být zlaté slitky PAMP při zpětném výkupu v původním obalu?",
     options: [
       "V případě doručení poškozeného zboží může společnost odmítnout nebo stanovit nižší cenu",
       "Chrání slitek proti poškození, protože je zlato velmi měkké",
-      "Zlaté slitky jsou zataveny v bezpečnostním CertiPAMP obalu a ten je jejich nedílnou součástí",
+      "Zlaté slitky are zataveny v bezpečnostním CertiPAMP obalu a ten je jejich nedílnou součástí",
       "Obal obsahuje základní údaje o slitku včetně jeho čísla a certifikát pravosti"
     ],
     explanation: "CertiPAMP obal je nedílnou součástí slitku: chrání měkké zlato, obsahuje certifikát pravosti a číslo. Jeho poškození znehodnocuje investici a může vést ke snížení výkupní ceny.",
@@ -651,7 +1648,7 @@ export const questions: Question[] = [
       "Zlaté zliatky sú zatavené v bezpečnostnom CertiPAMP obale a ten je ich neoddeliteľnou súčasťou",
       "Obal obsahuje základné údaje o zliatku vrátane jeho čísla a certifikát pravosti"
     ],
-    explanation_sk: "CertiPAMP obal je neoddeliteľnou súčasťou zliatku: chráni mäkké zlato, obsahuje certifikát pravosti a číslo. Jeho poškodenie znehodnocuje investíciu a môže viesť k zníženiu výkupnej ceny.",
+    explanation_sk: "CertiPAMP obal je neoddeliteľnou súčasťou zliatku: chráni mäkké zlato, obsahuje certifikát pravosti a číslo. Jeho poškozenie znehodnocuje investíciu a môže viesť k zníženiu výkupnej ceny.",
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.PRODUCTS
   },
@@ -712,30 +1709,29 @@ export const questions: Question[] = [
       "Vykonať prevod zlata na iné zlaté konto iiplanGold, iiplanRentier alebo iiplanMax",
       "Vykonať výplatu vo forme fyzického zlata od 1 do 1 000 g",
       "Vykonať výplatu v peniazoch na svoj bankový účet",
-      "Všetky možnosti sú správne"
+      "Všetky možnosti sú správné"
     ],
-    explanation_sk: "Systém je veľmi flexibilný. Nasporené gramy možno kedykoľvek odpredať (výplata peňazí), vybrať vo fyzickom zlate (od 1g zliatku) alebo previesť na inú zmluvu v rámci rodiny či firmy.",
+    explanation_sk: "Systém je veľmi flexibilný. Nasporené gramy možno kedykoľvek odpredať (výplata peňazí), vybrat vo fyzickom zlate (od 1g zliatku) alebo previesť na inú zmluvu v rámci rodiny či firmy.",
     correctAnswerIndices: [0, 1, 2], // 3 correct
     category: Category.PRODUCTS
   },
   {
     id: 48,
-    text: "Kdo je typický klient pro iiplanRentier®?",
+    text: "Kto je typický klient pre iiplanRentier®?",
     options: [
-      "Klient chce využít depozit zdarma",
-      "Klient chce zlato nebo stříbro okamžitě fyzicky doručit",
-      "Klient chce zlato nakupovat postupně",
-      "Klient chce využít výplatu pravidelné renty například v důchodu nebo dětem během studia"
-    ],
-    explanation: "Rentier je ideální pro ty, kteří chtějí postupně budovat majetek, využívat bezplatný depozit a v budoucnu čerpat pravidelnou rentu (výplatu) v penězích.",
-    text_sk: "Kto je typický klient pre iiplanRentier®?",
-    options_sk: [
       "Klient chce využiť depozit zadarmo",
       "Klient chce zlato alebo striebro okamžite fyzicky doručiť",
       "Klient chce zlato nakupovať postupne",
       "Klient chce využiť výplatu pravidelnej renty napríklad v dôchodku alebo deťom počas štúdia"
     ],
-    explanation_sk: "Rentier je ideálny pre tých, ktorí chcú postupne budovať majetok, využívať bezplatný depozit a v budúcnosti čerpať pravidelnú rentu (výplatu) v peniazoch.",
+    explanation: "Rentier je ideální pro ty, kteří chtějí postupně budovat majetek, využívat bezplatný depozit a v budoucnu čerpat pravidelnou rentu (výplatu) v penězích.",
+    text_sk: "Klient chce využiť depozit zadarmo",
+    options_sk: [
+      "Klient chce zlato alebo striebro okamžite fyzicky doručiť",
+      "Klient chce zlato nakupovať postupne",
+      "Klient chce využiť výplatu pravidelnej renty napríklad v dôchodku alebo deťom počas štúdia"
+    ],
+    explanation_sk: "Rentier je ideálny pre tých, ktorí chcú postupne budovať majetok, využívat bezplatný depozit a v budúcnosti čerpat pravidelnú rentu (výplatu) v peniazoch.",
     correctAnswerIndices: [0, 1, 2, 3],
     category: Category.PRODUCTS
   },
@@ -746,9 +1742,9 @@ export const questions: Question[] = [
       "10 oz zlatý ražený slitek Fortuna, rafinérie PAMP, první kus může být expedován nejdříve po 12 měsících od sjednání smlouvy, další po 12 měsících od expedice předešlého kusu",
       "10 oz zlatý ražený slitek Fortuna, rafinérie PAMP, každý jednotlivý kus může být expedován kdykoliv bez omezení",
       "1 kg zlatý litý slitek PAMP, první kus může být expedován nejdříve po 12 měsících od akceptace smlouvy, další po 12 měsících od expedice předešlého kusu",
-      "10 oz zlatý ražený slitek Fortuna, rafinérie PAMP, první kus může být expedován nejdříve po 12 měsících od akceptace smlouvy, další po 12 mesiacoch od expedice předešlého kusu"
+      "10 oz zlatý ražený slitek Fortuna, rafinérie PAMP, první kus může být expedován nejdříve po 12 měsících od akceptace smlouvy, další po 12 měsících od expedice předešlého kusu"
     ],
-    explanation: "Rentier má specifické podmínky pro vydání fyzického kovu, aby se podpořilo dlouhodobé spoření a čerpání renty, ne okamžitý odběr.",
+    explanation: "Rentier má specifické podmínky for vydání fyzického kovu, aby se podpořilo dlouhodobé spoření a čerpání renty, ne okamžitý odběr.",
     text_sk: "Čo je predmetom kúpy pri zmluve iiplanRentier® a kedy môže dôjsť k jeho expedícii zákazníkovi?",
     options_sk: [
       "10 oz zlatý razený zliatok Fortuna, rafinéria PAMP, prvý kus môže byť expedovaný najskôr po 12 mesiacoch od dojednania zmluvy, ďalší po 12 mesiacoch od expedície predchádzajúceho kusu",
@@ -756,28 +1752,27 @@ export const questions: Question[] = [
       "1 kg zlatý liaty zliatok PAMP, prvý kus môže byť expedovaný najskôr po 12 mesiacoch od akceptácie zmluvy, ďalší po 12 mesiacoch od expedície predchádzajúceho kusu",
       "10 oz zlatý razený zliatok Fortuna, rafinéria PAMP, prvý kus môže byť expedovaný najskôr po 12 mesiacoch od akceptácie zmluvy, ďalší po 12 mesiacoch od expedície predchádzajúceho kusu"
     ],
-    explanation_sk: "Rentier má špecifické podmienky pre vydanie fyzického kovu, aby sa podporilo dlhodobé sporenie a čerpanie renty, nie okamžitý odber.",
+    explanation_sk: "Rentier má špecifické podmienky pre vydanie fyzického kovu, aby sa podporilo dlhodobé sporenie a čerpanie renty, nie okamžitý odbber.",
     correctAnswerIndices: [1],
     category: Category.PRODUCTS
   },
   {
     id: 55,
-    text: "Kdo je typický klient pro iiplanMax®?",
+    text: "Kto je typický klient pre iiplanMax®?",
     options: [
       "Klient (fyzická osoba podnikatel nebo právnická osoba) chce využít systém plateb ve zlatě InGold PAY",
-      "Klient (fyzická osoba podnikatel nebo právnická osoba) chce mít svůj firemní majetek uložený částečně ve zlatě",
+      "Klient (fyzická osoba podnikatel nebo právnická osoba) chce mít svůj firemný majetek uložený částečně ve zlatě",
       "Klient chce zlato nebo stříbro okamžitě fyzicky doručit",
       "Klient chce využít výplatu pravidelné renty například v důchodu nebo dětem během studia"
     ],
     explanation: "iiplanMax je určen pro bonitní klienty a firmy. Umožňuje efektivní správu firemního majetku, využití zlata pro platby (InGold PAY), ale i standardní fyzický odběr nebo čerpání renty.",
-    text_sk: "Kto je typický klient pre iiplanMax®?",
+    text_sk: "Klient (fyzická osoba podnikateľ alebo právnická osoba) chce využiť systém platieb v zlate InGold PAY",
     options_sk: [
-      "Klient (fyzická osoba podnikateľ alebo právnická osoba) chce využiť systém platieb v zlate InGold PAY",
       "Klient (fyzická osoba podnikateľ alebo právnická osoba) chce mať svoj firemný majetok uložený čiastočne v zlate",
       "Klient chce zlato alebo striebro okamžite fyzicky doručiť",
-      "Klient chce využiť výplatu pravidelnej renty napríklad v dôchodku alebo deťom počas štúdia"
+      "Klient chce využžiť výplatu pravidelnej renty napríklad v dôchodku alebo deťom počas štúdia"
     ],
-    explanation_sk: "iiplanMax je určený pre bonitných klientov a firmy. Umožňuje efektívnu správu firemného majetku, využitie zlata na platby (InGold PAY), ale aj štandardný fyzický odber alebo čerpanie renty.",
+    explanation_sk: "iiplanMax je určený pre bonitných klientov a firmy. Umožňuje efektívnu správu firemného majetku, využitie zlata na platby (InGold PAY), ale aj štandardný fyzický odbber alebo čerpanie renty.",
     correctAnswerIndices: [0, 1, 2, 3], // All 4 correct
     category: Category.PRODUCTS
   },
@@ -791,9 +1786,8 @@ export const questions: Question[] = [
       "Možnost převodu zlata na jiné zlaté konto"
     ],
     explanation: "iiplanProfi v sobě kombinuje výhody postupného nákupu konkrétního slitku/mince, bezplatného depozitu a flexibility převodů na jiná konta.",
-    text_sk: "Akú výhodu prináša klientovi iiplanProfi®?",
+    text_sk: "Možnosť platenia zlatom u obchodníkov",
     options_sk: [
-      "Možnosť platenia zlatom u obchodníkov",
       "Možnosť postupného nákupu zvoleného zliatku alebo mince",
       "Možnosť depozitu zadarmo",
       "Možnosť prevodu zlata na iné zlaté konto"
@@ -832,15 +1826,14 @@ export const questions: Question[] = [
       "Investiční zlato z rafinéri PAMP je ověřitelné technologii VERISCAN™ a u slitků a mincí The Royal Mint jsou zapracované bezpečnostní prvky, jako mikrotexty, animace změny kresby na mincích atd.",
       "Falešné zlato neexistuje, jsou to jen fámy"
     ],
-    explanation: "Přímé partnerství s rafinérií (prvodržitelství) a ověřitelné ochranné prvky jsou nejvyšší garancí pravosti.",
-    text_sk: "Uveďte správne argumenty na otázku: Akú má klient istotu, že je zlato pravé?",
+    explanation: "Přímé partnerství s rafinérií (prvodržitelství) and ověřitelné ochranné prvky jsou nejvyšší garancí pravosti.",
+    text_sk: "Spoločnosť IBIS InGold je oficiálny partner švajčiarskej rafinérie PAMP a britskej mincovne The Royal Mint vrátane garancie prvodržiteľstva",
     options_sk: [
-      "Spoločnosť IBIS InGold je oficiálny partner švajčiarskej rafinérie PAMP a britskej mincovne The Royal Mint vrátane garancie prvodržiteľstva",
       "Istotu nemá u žiadneho obchodníka",
       "Investičné zlato z rafinérie PAMP je overiteľné technológiou VERISCAN™ a pri zliatkoch a minciach The Royal Mint sú zapracované bezpečnostné prvky, ako mikrotexty, animácie zmeny kresby na minciach atď.",
       "Falošné zlato neexistuje, sú to len fámy"
     ],
-    explanation_sk: "Priame partnerstvo s rafinériou (prvodržiteľstvo) a overiteľné ochranné prvky sú najvyššou garanciou pravosti.",
+    explanation_sk: "Priame partnerstvo s rafinériou (prvodržitelstvo) a overiteľné ochranné prvky jsou najvyššou garanciou pravosti.",
     correctAnswerIndices: [0],
     category: Category.PRODUCTS
   },
@@ -892,8 +1885,8 @@ export const questions: Question[] = [
     id: 29,
     text: "Které tvrzení ohledně spreadu je pravdivé?",
     options: [
-      "Nejvyšší spread je obvykle u nejvyšších gramáží",
-      "Nejnižší spread je obvykle u nejnižších gramáží",
+      "Nejvyšší spread is obvykle u nejvyšších gramáží",
+      "Nejnižší spread je obvyny u nejnižších gramáží",
       "Nejnižší spread je obvykle u nejvyšších gramáží",
       "Nejvyšší spread je obvykle u nejnižších gramáží"
     ],
@@ -911,7 +1904,7 @@ export const questions: Question[] = [
   },
   {
     id: 32,
-    text: "Na jaké konto se připisuje gramová prémie za platbu zlatem ve výši 0,5 %?",
+    text: "Na aké konto sa pripisuje gramová prémia za platbu zlatom vo výške 0,5 %?",
     options: [
       "Na iiplanMax®, iiplanGold®, iiplanRentier®",
       "Na iiplanGold®, iiplanRentier®",
@@ -932,12 +1925,12 @@ export const questions: Question[] = [
   },
   {
     id: 33,
-    text: "Kdy je klientovi vrácena poměrná část VCN u smlouvy iiplanGold?",
+    text: "Kedy je klientovi vrátená pomerná časť VCN pri zmluve iiplanGold?",
     options: [
-      "Při výplatě v kovu a převodu gramů na konto iiplanGold®, iiplanRentier®",
-      "Při výplatě v kovu a převodu gramů na konto iiplanMax®",
-      "Při výplatě v kovu a převodu gramů na konto iiplanGold®",
-      "Při výplatě v kovu a převodu gramů na konto iiplanGold®, iiplanRentier®, iiplanMax®"
+      "Pri výplate v kove a prevode gramov na konto iiplanGold®, iiplanRentier®",
+      "Pri výplate v kove a prevode gramov na konto iiplanMax®",
+      "Pri výplate v kove a prevode gramov na konto iiplanGold®",
+      "Pri výplate v kove a prevode gramov na konto iiplanGold®, iiplanRentier®, iiplanMax®"
     ],
     explanation: "Dle podmínek iiplanGold se poměrná část VCN vrací formou prémie při určitých transakcích, typicky při výplatě kovu nebo převodu v rámci stejného typu produktu.",
     text_sk: "Kedy je klientovi vrátená pomerná časť VCN pri zmluve iiplanGold?",
@@ -955,10 +1948,10 @@ export const questions: Question[] = [
     id: 34,
     text: "Jaká bude výše Odměny prodávajícímu za obstarání prodeje (Success Fee) u iiplanGold?",
     options: [
-      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 4 %)",
-      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují pouze při Výplatě v penězích (výnos nad 4 %)",
-      "15 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 4 %)",
-      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu, převodu gramů nebo při dodání předmětu koupě (výnos nad 4 %)"
+      "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v peniazoch, Výplate v kove a prevode gramov (výnos nad 4 %)",
+      "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú iba pri Výplate v peniazoch (výnos nad 4 %)",
+      "15 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v peniazoch, Výplate v kove a prevode gramov (výnos nad 4 %)",
+      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu, převodu gramů nebo při dodaní předmětu koupě (výnos nad 4 %)"
     ],
     explanation: "Success Fee je 10 % ze zisku, ale aplikuje se pouze tehdy, pokud zhodnocení zlata přesáhne 4 % (tzv. hurdle rate).",
     text_sk: "Aká bude výška Odmeny predávajúcemu za obstaranie predaja (Success Fee) pri iiplanGold?",
@@ -968,7 +1961,7 @@ export const questions: Question[] = [
       "15 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v peniazoch, Výplate v kove a prevode gramov (výnos nad 4 %)",
       "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v peniazoch, Výplate v kove, prevode gramov alebo pri dodaní predmetu kúpy (výnos nad 4 %)"
     ],
-    explanation_sk: "Success Fee je 10 % zo zisku, ale aplikuje sa iba vtedy, ak zhodnotenie zlata presiahne 4 % (tzv. hurdle rate).",
+    explanation_sk: "Success Fee je 10 % ze zisku, ale aplikuje se iba vtedy, ak zhodnotenie zlata presiahne 4 % (tzv. hurdle rate).",
     correctAnswerIndices: [0],
     category: Category.FEES_COSTS
   },
@@ -976,18 +1969,18 @@ export const questions: Question[] = [
     id: 35,
     text: "Jaká bude výše Odměny prodávajícímu za obstarávání nákupů investičního zlata (Management Fee) u smlouvy iiplanRentier®?",
     options: [
-      "0 % ročně, neuplatňuje se",
-      "Pro část do 500 g ve výši 0,9125 % ročně, pro část nad 500 g 0 % ročně",
-      "Pro celých 1 000 g ve výši 0,9125 % ročně, pro část nad 1 000 g 0 % ročně",
-      "Pro část do 500 g ve výši 0,9125 % měsíčně, pro část nad 500 g 0 % měsíčně"
+      "0 % ročne, neuplatňuje sa",
+      "Pre časť do 500 g vo výške 0,9125 % ročne, pre časť nad 500 g 0 % ročne",
+      "Pre celých 1 000 g vo výške 0,9125 % ročne, pre časť nad 1 000 g 0 % ročne",
+      "Pre časť do 500 g vo výške 0,9125 % ročne, pre časť nad 500 g 0 % ročne"
     ],
-    explanation: "U iiplanRentier se Management Fee neuplatňuje (0 %).",
+    explanation: "Pri iiplanRentier sa Management Fee neuplatňuje (0 %).",
     text_sk: "Aká bude výška Odmeny predávajúcemu za obstarávanie nákupov investičného zlata (Management Fee) pri zmluve iiplanRentier®?",
     options_sk: [
       "0 % ročne, neuplatňuje sa",
       "Pre časť do 500 g vo výške 0,9125 % ročne, pre časť nad 500 g 0 % ročne",
       "Pre celých 1 000 g vo výške 0,9125 % ročne, pre časť nad 1 000 g 0 % ročne",
-      "Pre časť do 500 g vo výške 0,9125 % mesačne, pre časť nad 500 g 0 % mesačne"
+      "Pre časť do 500 g vo výške 0,9125 % ročne, pre časť nad 500 g 0 % ročne"
     ],
     explanation_sk: "Pri iiplanRentier sa Management Fee neuplatňuje (0 %).",
     correctAnswerIndices: [0],
@@ -997,20 +1990,18 @@ export const questions: Question[] = [
     id: 37,
     text: "Jak se klientovi vrací Vstupní cenové navýšení (VCN)?",
     options: [
-      "Vstupní cenové navýšení se klientovi vrací ve formě VCN",
-      "Vstupní cenové navýšení se klientovi vrací ve formě Výkupní prémie iiplan® při výkupu předmětu koupě. Dále se vrací při výplatě v kovu a při převodu gramů na stejný typ smlouvy ze smlouvy iiplanGold®, iiplanRentier® i iiplanMax®, ve formě Výkupní prémie iiplan®, která je součástí Celkové výkupní ceny.",
+      "Vstupné cenové navýšenie sa klientovi vracia vo forme Výkupnej prémie iiplan® pri výkupe predmetu kúpy. Ďalej sa vracia pri výplate v kove a pri prevode gramov na rovnaký typ zmluvy zo zmluvy iiplanGold®, iiplanRentier® aj iiplanMax®, vo forme Výkupnej prémie iiplan®, ktorá je súčasťou Celkovej výkupnej ceny.",
       "Vstupní cenové navýšení se klientovi vrací ve formě Výkupní ceny kovu",
       "Vstupní cenové navýšení se klientovi vrací ve formě Výkupní prémie IBIS při výkupu předmětu koupě. Dále se vrací při výplatě v kovu a při převodu gramů na stejný typ smlouvy ze smlouvy iiplanGold®, iiplanRentier® i iiplanMax®, ve formě Výkupní prémie IBIS, která je součástí Celkové výkupní ceny."
     ],
     explanation: "VCN se vrací formou prémie při splnění podmínek (výkup, převod) jako součást výkupní ceny.",
     text_sk: "Ako sa klientovi vracia Vstupné cenové navýšenie (VCN)?",
     options_sk: [
-      "Vstupné cenové navýšenie sa klientovi vracia vo forme VCN",
       "Vstupné cenové navýšenie sa klientovi vracia vo forme Výkupnej prémie iiplan® pri výkupe predmetu kúpy. Ďalej sa vracia pri výplate v kove a pri prevode gramov na rovnaký typ zmluvy zo zmluvy iiplanGold®, iiplanRentier® aj iiplanMax®, vo forme Výkupnej prémie iiplan®, ktorá je súčasťou Celkovej výkupnej ceny.",
       "Vstupné cenové navýšenie sa klientovi vracia vo forme Výkupnej ceny kovu",
       "Vstupné cenové navýšenie sa klientovi vracia vo forme Výkupnej prémie IBIS pri výkupe predmetu kúpy. Ďalej sa vracia pri výplate v kove a pri prevode gramov na rovnaký typ zmluvy zo zmluvy iiplanGold®, iiplanRentier® aj iiplanMax®, vo forme Výkupnej prémie IBIS, ktorá je súčasťou Celkovej výkupnej ceny."
     ],
-    explanation_sk: "VCN sa vracia formou prémie pri splnení podmienok (výkup, prevod) ako súčasť výkupnej ceny.",
+    explanation_sk: "VCN sa vracia formou prémie při splnění podmienok (výkup, prevod) ako súčasť výkupní ceny.",
     correctAnswerIndices: [1], // Updated based on PDF
     category: Category.FEES_COSTS
   },
@@ -1018,8 +2009,8 @@ export const questions: Question[] = [
     id: 38,
     text: "Jaká bude výše Odměny prodávajícímu za obstarání prodeje investičního zlata (Success Fee) při výplatě z Váhového konta u smlouvy iiplanRentier®?",
     options: [
-      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují pouze při Výplatě v penězích (výnos nad 9 %)",
-      "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v kovu, převodu gramů nebo při dodání předmětu koupě (výnos nad 9 %)",
+      "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú iba pri Výplate v peniazoch (výnos nad 9 %)",
+      "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v kove, prevode gramov alebo pri dodaní predmetu kúpy (výnos nad 9 %)",
       "Neuplatňuje se",
       "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 9 %)"
     ],
@@ -1028,7 +2019,7 @@ export const questions: Question[] = [
     options_sk: [
       "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú iba pri Výplate v peniazoch (výnos nad 9 %)",
       "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v kove, prevode gramov alebo pri dodaní predmetu kúpy (výnos nad 9 %)",
-      "Neuplatňuje sa",
+      "Neuplatňuje se",
       "10 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v peniazoch, Výplate v kove a prevode gramov (výnos nad 9 %)"
     ],
     explanation_sk: "Pri iiplanRentier sa Success Fee neuplatňuje.",
@@ -1039,16 +2030,16 @@ export const questions: Question[] = [
     id: 40,
     text: "Co platí u zpětného výkupu předmětu koupě (1 kg zlatý litý slitek PAMP) do 5 let od dodání slitku u smlouvy iiplanGold®?",
     options: [
-      "spread 4 %, vrací se VCN za každý slitek",
+      "spread 4 %, vracia sa VCN za každý zliatok",
       "spread 0 %, nevrací se VCN",
-      "spread 0 %, vrací se VCN za každý slitek",
-      "spread 4 %, nevrací se VCN"
+      "spread 0 %, vracia sa VCN za každý zliatok",
+      "spread 4 %, nevracia sa VCN"
     ],
     explanation: "Při rychlém zpětném výkupu (do 5 let) je sice spread 0% (výhodné), ale nevrací se VCN (bonus).",
     text_sk: "Čo platí pri spätnom výkupe predmetu kúpy (1 kg zlatý liaty zliatok PAMP) do 5 rokov od dodania zliatku pri zmluve iiplanGold®?",
     options_sk: [
       "spread 4 %, vracia sa VCN za každý zliatok",
-      "spread 0 %, nevracia sa VCN",
+      "spread 0 %, nevrací se VCN",
       "spread 0 %, vracia sa VCN za každý zliatok",
       "spread 4 %, nevracia sa VCN"
     ],
@@ -1065,7 +2056,7 @@ export const questions: Question[] = [
       "4 %",
       "3 %"
     ],
-    explanation: "Standardní spread při výkupu peněz z iiplanGold je 4%.",
+    explanation: "Standardní spread při výkupu peněz z iiplanGold is 4%.",
     text_sk: "Aký je spread pri výplate v peniazoch z Váhového konta v zmluve iiplanGold®?",
     options_sk: [
       "0 %",
@@ -1123,10 +2114,10 @@ export const questions: Question[] = [
     id: 44,
     text: "Jaká bude výše Odměny prodávajícímu za obstarání prodeje investičního zlata (Success Fee) při výplatě z Váhového konta u smlouvy iiplanMax®?",
     options: [
-      "15 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují pouze při Výplatě v penězích (výnos nad 3 %)",
-      "15 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 3 %)",
+      "15 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú iba pri Výplate v peniazoch (výnos nad 3 %)",
+      "15 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupujú při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 3 %)",
       "10 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v penězích, Výplatě v kovu a převodu gramů (výnos nad 3 %)",
-      "15 % z výnosu, který je vypočten jako kladný rozdíl mezi Výkupní cenou kovu a původní Kupní cenou gramů, které se vykupují při Výplatě v kovu, převodu gramů nebo při dodání předmětu koupě (výnos nad 3 %)"
+      "15 % z výnosu, ktorý je vypočítaný ako kladný rozdiel medzi Výkupnou cenou kovu a pôvodnou Kúpnou cenou gramov, ktoré sa vykupujú pri Výplate v kove, prevode gramov alebo pri dodaní predmetu kúpy (výnos nad 3 %)"
     ],
     explanation: "U iiplanMax je Success Fee 15% z výnosu nad 3%.",
     text_sk: "Aká bude výška Odmeny predávajúcemu za obstaranie predaja investičného zlata (Success Fee) pri výplate z Váhového konta pri zmluve iiplanMax®?",
@@ -1157,7 +2148,7 @@ export const questions: Question[] = [
       "Spread",
       "VCN"
     ],
-    explanation_sk: "Zmluva iiplanMax je komplexný produkt pre väčšie investície, preto obsahuje všetky typy poplatkov: Vstupné cenové navýšenie (VCN), Spread (rozdiel nákup/predaj), Management Fee za správu (do 500g) a Success Fee (podiel na zisku).",
+    explanation_sk: "Zmluva iiplanMax je komplexný produkt pre väčšie investície, preto obsahuje všetky typy poplatkov: Vstupné cenové navýšenie (VCN), Spread (rozdiel nákup/predaj), Management Fee za správu (do 500g) a Success Fee (podíl na zisku).",
     correctAnswerIndices: [0, 1, 2, 3], // All 4 correct
     category: Category.FEES_COSTS
   },
@@ -1239,7 +2230,7 @@ export const questions: Question[] = [
       "100/0 760 EUR, 70/30 1 160 EUR, 50/50 1 560 EUR",
       "100/0 760 EUR, 70/30 960 EUR, 50/50 1 160 EUR",
       "100/0 1 560 EUR",
-      "100/0 760 EUR, 70/30 960 EUR, 50/50 1 560 EUR"
+      "100/0 760 EUR, 70/30 960 EUR, 50/50 1 160 EUR"
     ],
     explanation_sk: "Pri iiplanRentier sú 3 varianty rozloženia VCN.",
     correctAnswerIndices: [0], // Corrected based on PDF
@@ -1247,14 +2238,14 @@ export const questions: Question[] = [
   },
   {
     id: 53,
-    text: "Co to je Vstupní cenové navýšení?",
+    text: "Čo to je Vstupné cenové navýšenie?",
     options: [
       "Vstupní cenové navýšení je součástí kupní ceny každého kusu předmětu koupě u všech smluv, vč. Jednorázového nákupu.",
       "Vstupní cenové navýšení je součástí kupní ceny každého kusu předmětu koupě u smluv iiplanProfi®, iiplanGold®, iiplanRentier® nebo iiplanMax®.",
       "Vstupní cenové navýšení je součástí kupní ceny prvního kusu předmětu koupě u všech smluv, vč. Jednorázového nákupu.",
       "Vstupní cenové navýšení je součástí kupní ceny prvního kusu předmětu koupě u smluv iiplanProfi®, iiplanGold®, iiplanRentier® nebo iiplanMax®."
     ],
-    explanation: "VCN je poplatek připočtený k ceně u spořících plánů, nikoliv u jednorázového nákupu.",
+    explanation: "VCN is poplatek připočtený k ceně u spořících plánů, nikoliv u jednorázového nákupu.",
     text_sk: "Čo to je Vstupné cenové navýšenie?",
     options_sk: [
       "Vstupné cenové navýšenie je súčasťou kúpnej ceny každého kusu predmetu kúpy pri všetkých zmluvách, vrát. Jednorazového nákupu.",
@@ -1280,8 +2271,8 @@ export const questions: Question[] = [
     options_sk: [
       "100/0 1 560 EUR",
       "100/0 760 EUR, 70/30 960 EUR, 50/50 1 160 EUR",
-      "100/0 760 EUR, 70/30 960 EUR, 50/50 1 560 EUR",
-      "100/0 760 EUR, 70/30 1 160 EUR, 50/50 1 560 EUR"
+      "100/0 760 EUR, 70/30 960 EUR, 50/50 1 160 EUR",
+      "100/0 760 EUR, 70/30 1 160 EUR, 50/50 1 160 EUR"
     ],
     explanation_sk: "Pri iiplanGold sú 3 varianty rozloženia VCN s rôznymi cenami (najdrahšia je rozložená 50/50).",
     correctAnswerIndices: [3], // Corrected based on PDF
@@ -1291,9 +2282,9 @@ export const questions: Question[] = [
     id: 57,
     text: "Jaká bude výše Odměny prodávajícímu za obstarávání nákupů investičního zlata (Management Fee) u smlouvy iiplanMax®?",
     options: [
-      "Pro část do 500 g ve výši 0,9125 % měsíčně, pro část nad 500 g 0 % měsíčně",
+      "Pre časť do 500 g vo výške 0,9125 % mesačne, pre časť nad 500 g 0 % mesačne",
       "Pro celých 1 000 g ve výši 0,9125 % ročně, pro část nad 1 000 g 0 % ročně",
-      "0 % ročně, neuplatňuje se",
+      "0 % ročne, neuplatňuje se",
       "Pro část do 500 g ve výši 0,9125 % ročně, pro část nad 500 g 0 % ročně"
     ],
     explanation: "U iiplanMax se platí Management Fee pouze z prvních 500g, nad tuto hranici je 0%.",
@@ -1301,10 +2292,10 @@ export const questions: Question[] = [
     options_sk: [
       "Pre časť do 500 g vo výške 0,9125 % mesačne, pre časť nad 500 g 0 % mesačne",
       "Pre celých 1 000 g vo výške 0,9125 % ročne, pre časť nad 1 000 g 0 % ročne",
-      "0 % ročne, neuplatňuje sa",
+      "0 % ročne, neuplatňuje se",
       "Pre časť do 500 g vo výške 0,9125 % ročne, pre časť nad 500 g 0 % ročne"
     ],
-    explanation_sk: "Pri iiplanMax sa platí Management Fee iba z prvých 500g, nad túto hranicu je 0%.",
+    explanation_sk: "Pri iiplanMax se platí Management Fee iba z prvých 500g, nad túto hranicu je 0%.",
     correctAnswerIndices: [3],
     category: Category.FEES_COSTS
   },
@@ -1322,7 +2313,7 @@ export const questions: Question[] = [
     options_sk: [
       "Každý produkt má svoje náklady a VCN je podľa konkrétneho využitia a typu zmluvy vratná záloha, ktorá sa úplne alebo čiastočne vracia klientovi späť",
       "Vstupné cenové navýšenie sa klientovi vracia vo forme Výkupnej prémie iiplan® pri výkupe predmetu kúpy. Ďalej sa vracia pri výplate v kove a pri prevode gramov na rovnaký typ zmluvy zo zmluvy iiplanGold®, iiplanRentier® aj iiplanMax®, vo forme Výkupnej prémie iiplan®, ktorá je súčasťou Celkovej výkupnej ceny.",
-      "Z VCN sa platí naša provízia",
+      "Z VCN se platí naša provízia",
       "VCN má každý predajca zlata"
     ],
     explanation_sk: "VCN nie je utopený náklad, ale vratná záloha (bonus) pre verných klientov, ktorí sporenie dokončia.",
@@ -1340,7 +2331,7 @@ export const questions: Question[] = [
       "37 500 CZK + 1 500 CZK = 39 000 CZK",
       "40 000 CZK + 15 000 CZK = 55 000 CZK"
     ],
-    explanation: "V postavení 5 je základní provize 400 Kč/bod. 100 bodů = 40 000 Kč. Plus bonusy z motivačního programu.",
+    explanation: "V postavení 5 is základní provize 400 Kč/bod. 100 bodů = 40 000 Kč. Plus bonusy z motivačního programu.",
     text_sk: "Aká je výška provízie vrátane odmeny z Motivačného programu za vlastnú produkciu 100 bodov za mesiac u partnera na pozícii 5?",
     options_sk: [
       "1 500 EUR + 300 EUR = 1 800 EUR",
@@ -1378,15 +2369,14 @@ export const questions: Question[] = [
     text: "Jaká provize je vyplacena partnerovi při převodu zlata z váhového konta iiplanMax® na iiplanGold®, pokud sjednal obě smlouvy?",
     options: [
       "Vždy provizi za Success Fee a za převod u smlouvy iiplanMax®",
-      "Vždy provizi za Success Fee a za převod u smlouvy iiplanGold®",
+      "Vždy provizi za Success Fee a za prevod u smlouvy iiplanGold®",
       "Není vyplacena žádná provize",
-      "Provizi za Success Fee u smlouvy iiplanMax®, pokud klient realizuje výnos (nad 3%)"
+      "Provizi za Success Fee u smlouvy iiplanMax®, pokud klient realizily výnos (nad 3%)"
     ],
     explanation: "Provize se vyplácí ze zisku (Success Fee) při realizaci výnosu nad hurdle rate.",
     text_sk: "Aká provízia je vyplatená partnerovi pri prevode zlata z váhového konta iiplanMax® na iiplanGold®, ak dojednal obe zmluvy?",
     options_sk: [
       "Vždy províziu za Success Fee a za prevod pri zmluve iiplanMax®",
-      "Vždy províziu za Success Fee a za prevod pri zmluve iiplanGold®",
       "Nie je vyplatená žiadna provízia",
       "Províziu za Success Fee pri zmluve iiplanMax®, ak klient realizuje výnos (nad 3%)"
     ],
@@ -1425,7 +2415,7 @@ export const questions: Question[] = [
       "75 000 CZK + 22 500 CZK = 97 500 CZK"
     ],
     explanation: "Pozice 4 (375 Kč/bod) * 200 = 75 000. Motivační program pro 200 bodů přidává bonus 22 500.",
-    text_sk: "Aká je výška provízie vrátane odmeny z Motivačného programu za vlastnú produkciu 200 bodov za mesiac u partnera na pozícii 4?",
+    text_sk: "Aká je výška provízie vrátane odmeny z Motivačého programu za vlastnú produkciu 200 bodov za mesiac u partnera na pozícii 4?",
     options_sk: [
       "2 600 EUR + 900 EUR = 3 500 EUR",
       "2 600 EUR + 600 EUR = 3 200 EUR",
@@ -1480,7 +2470,7 @@ export const questions: Question[] = [
   },
   {
     id: 66,
-    text: "Jaká je výše provize včetně odměny z Motivačního programu za vlastní produkci 100 bodů za měsíc u partnera v postavení 4?",
+    text: "Jaká je výše provize včetně odměny z Motivačního programu za vlastni produkci 100 bodů za měsíc u partnera v postavení 4?",
     options: [
       "32 500 CZK + 15 000 CZK = 47 500 CZK",
       "37 500 CZK + 7 500 CZK = 45 000 CZK",
@@ -1635,7 +2625,7 @@ export const questions: Question[] = [
       "50 000 CZK + 15 000 CZK = 65 000 CZK"
     ],
     explanation: "Pozice 2 (250 Kč) * 200 = 50 000. Motivační bonus 200b = 22 500.",
-    text_sk: "Aká je výška provízie vrátane odmeny z Motivačného programu za vlastnú produkciu 200 bodov za mesiac u partnera na pozícii 2?",
+    text_sk: "Aká je výška provízie vrátane odmeny z Motivačého programu za vlastnú produkciu 200 bodov za mesiac u partnera na pozícii 2?",
     options_sk: [
       "1 600 EUR + 600 EUR = 2 200 EUR",
       "2 000 EUR + 900 EUR = 2 900 EUR",
@@ -1653,7 +2643,7 @@ export const questions: Question[] = [
       "Není vyplacena žádná provize",
       "Vždy provizi za Success Fee u první smlouvy iiplanMax®",
       "Vždy provizi za Success Fee u druhé smlouvy iiplanMax®",
-      "Provizi za Success Fee u první smlouvy iiplanMax®, pokud klient realizuje výnos (nad 3%)"
+      "Provizi za Success Fee u první smlouvy iiplanMax®, pokud klient realizily výnos (nad 3%)"
     ],
     explanation: "Success Fee ze zdrojové smlouvy při zisku nad 3%.",
     text_sk: "Aká provízia je vyplatená partnerovi pri prevode zlata z váhového konta iiplanMax® na druhý iiplanMax®, ak dojednal obe zmluvy?",
@@ -1669,7 +2659,7 @@ export const questions: Question[] = [
   },
   {
     id: 75,
-    text: "Kdo organizuje porady a motivační setkání pro svůj tým partnerů?",
+    text: "Kto organizuje porady a motivačné stretnutia pre svoj tím partnerov?",
     options: [
       "Partner s týmem v postavení 2 a vyšším",
       "Partner s týmem, ale jen když o to bude požádán svým týmem",
@@ -1677,9 +2667,8 @@ export const questions: Question[] = [
       "Vedení společnosti FireGOLD"
     ],
     explanation: "Lídři od pozice 2 mají zodpovědnost za vedení a motivaci svého týmu.",
-    text_sk: "Kto organizuje porady a motivačné stretnutia pre svoj tím partnerov?",
+    text_sk: "Partner s tímom na pozícii 2 a vyššej",
     options_sk: [
-      "Partner s tímom na pozícii 2 a vyššej",
       "Partner s tímom, ale len keď o to bude požiadaný svojím tímom",
       "Partner s tímom, ale až od pozície 3",
       "Vedenie spoločnosti FireGOLD"
@@ -1690,7 +2679,7 @@ export const questions: Question[] = [
   },
   {
     id: 76,
-    text: "Jaká je odměna za 1 vlastní bod v postavení 3 Manažer?",
+    text: "Jaká je odmena za 1 vlastní bod v postavení 3 Manažer?",
     options: [
       "375 CZK",
       "300 CZK",
@@ -1719,14 +2708,14 @@ export const questions: Question[] = [
       "Negarantují zpětný výkup zlata"
     ],
     explanation: "Nízká cena u obchodníků často znamená absenci služeb. FireGOLD nabízí komplexní servis: bezplatný depozit (úschovu), možnost postupného spoření a především smluvní garanci zpětného výkupu, což 'levní' prodejci často neposkytují.",
-    text_sk: "Uveďte správne argumenty na otázku: Prečo je na internete u niektorých obchodníkov zlato lacnejšie?",
+    text_sk: "Uveďte správne argumenty na otázku: Prečo je na internetu u niektorých obchodníkov zlato lacnejšie?",
     options_sk: [
       "Neposkytujú bezplatný depozit zlata",
       "Neumožňujú sporenie do zlata",
       "Ponúkajú iba predaj a výkup zlata bez ďalších služieb",
       "Negarantujú spätný výkup zlata"
     ],
-    explanation_sk: "Nízka cena u obchodníkov často znamená absenciu služieb. FireGOLD ponúka komplexný servis: bezplatný depozit (úschovu), možnosť postupného sporenia a predovšetkým zmluvnú garanciu spätného výkupu, čo 'lacní' predajcovia často neposkytujú.",
+    explanation_sk: "Nízka cena u obchodníkov často znamená absenciu služieb. FireGOLD ponúka komplexní servis: bezplatný depozit (úschovu), možnosť postupného sporenia a predovšetkým zmluvnú garanciu spätného výkupu, čo 'lacní' predajcovia často neposkytujú.",
     correctAnswerIndices: [0, 1, 2, 3], // All 4 correct
     category: Category.ETHICS_COMPANY
   },
@@ -1740,9 +2729,8 @@ export const questions: Question[] = [
       "Pokud už jednáme s klientem, tak už musí nakupovat jenom u společnosti FireGold"
     ],
     explanation: "Přidanou hodnotou partnera je osobní servis, poradenství a možnost individuálních výhod.",
-    text_sk: "Uveďte správne argumenty na otázku: Prečo by som mal nakupovať cez FireGOLD a nie priamo cez IBIS InGold?",
+    text_sk: "U nás to budete mať určite lepšie",
     options_sk: [
-      "U nás to budete mať určite lepšie",
       "To iste môžete, máme úplne rovnaké cenové podmienky, u nás ale získate navyše mňa ako osobného poradcu a ja Vám môžem prípadne ponúknuť aj zvýhodnené podmienky ako napríklad zľavu na VCN",
       "Osobné stretnutie so zástupcom IBIS InGold je možné jedine na centrále spoločnosti",
       "Ak už rokujeme s klientom, tak už musí nakupovať len u spoločnosti FireGold"
@@ -1768,7 +2756,7 @@ export const questions: Question[] = [
       "Oslobodené iba v ČR",
       "Nie sú nikde oslobodené",
       "Oslobodené v celej EÚ",
-      "Príjmy z predaja investičného striebra sú oslobodené od daní z príjmov v Českej republike a na Slovensku (pre fyzické osoby nepodnikateľov po časovom teste)"
+      "Príjmy z predaja investičného striebra oslobodené od daní z príjmov v Českej republike a na Slovensku (pre fyzické osoby nepodnikateľov po časovom teste)"
     ],
     explanation_sk: "Pre fyzické osoby nepodnikateľov platí v ČR a SR oslobodenie od dane z príjmu pri predaji hnuteľných vecí (kovov), ak nie sú v obchodnom majetku.",
     correctAnswerIndices: [3],
@@ -1778,7 +2766,7 @@ export const questions: Question[] = [
     id: 7,
     text: "Je možné použít platby v hotovosti při nákupu slitků nebo mincí?",
     options: [
-      "Klient může složit hotovost v bance na bankovní účet společnosti IBIS InGold s identifikací svého čísla smlouvy (variabilní symbol, příp. popis transakce)",
+      "Klient může složit hotovost v bance na bankový účet společnosti IBIS InGold s identifikací svého čísla smlouvy (variabilní symbol, příp. popis transakce)",
       "V ČR je možné u Jednorázového nákupu uhradit slitky nebo mince na dobírku v hotovosti do celkové částky 200 000 CZK",
       "IBIS InGold nepřijímá platby v hotovosti",
       "IBIS InGold přijímá platby v hotovosti pouze na své centrále"
@@ -1791,7 +2779,7 @@ export const questions: Question[] = [
       "IBIS InGold neprijíma platby v hotovosti",
       "IBIS InGold prijíma platby v hotovosti iba na svojej centrále"
     ],
-    explanation_sk: "Spoločnosť z dôvodu AML priamo hotovosť neprijíma. Možnosti sú vklad na účet v banke alebo dobierka pri menších jednorazových nákupoch.",
+    explanation_sk: "Spoločnosť z dôvodu AML priamo hotovosť neprijíma. Možnosti sů vklad na účet v banke alebo dobierka pri menších jednorazových nákupoch.",
     correctAnswerIndices: [0, 1, 2], // 3 correct
     category: Category.LEGAL_TAX
   },
@@ -1833,13 +2821,13 @@ export const questions: Question[] = [
       "áno, ale musí investičné zlato nahlásiť colnému úradu pri jeho hodnote 10.000 EUR a vyššej",
       "áno, bez obmedzenia"
     ],
-    explanation_sk: "Pri cestovaní mimo EÚ s hotovosťou alebo komoditami (ako zlato) v hodnote nad 10 000 EUR vzniká ohlasovacia povinnosť na colnici.",
+    explanation_sk: "Pri cestovaní mimo EÚ s hodotovosťou alebo komoditami (ako zlato) v hodnote nad 10 000 EUR vzniká ohlasovacia povinnosť na celnici.",
     correctAnswerIndices: [2],
     category: Category.LEGAL_TAX
   },
   {
     id: 30,
-    text: "Co je pravdivé tvrzení o investičním stříbře ve vztahu k DPH?",
+    text: "Co je pravdivé tvrzení o investičním stříbře vo vzťahu k DPH?",
     options: [
       "Investiční stříbro je osvobozeno od DPH pouze v České republice",
       "Investiční stříbro je osvobozeno od DPH v celé Evropské unii",
@@ -1875,7 +2863,7 @@ export const questions: Question[] = [
       "Počet členov domácnosti",
       "Rodinný stav"
     ],
-    explanation_sk: "Investičný dotazník (profil) zisťuje klientove znalosti, skúsenosti a vzťah k riziku (rizikový profil).",
+    explanation_sk: "Investičný dotazník (profil) zisťuje klientove znalosti, skúsenosti a vztah k riziku (rizikový profil).",
     correctAnswerIndices: [1, 3], // 2 Correct
     category: Category.LEGAL_TAX
   },
@@ -1917,7 +2905,7 @@ export const questions: Question[] = [
       "Analýza rizikového profilu",
       "Zostavenie finančného plánu"
     ],
-    explanation_sk: "KYC (Know Your Customer) je proces, ktorým finančné inštitúcie overujú identitu svojich klientov a vyhodnocujú potenciálne riziká.",
+    explanation_sk: "KYC (Know Your Customer) je proces, ktorým finančné inštitúcie overujú identitu svojich klientov a vyhodnocujú potenciálne rizika.",
     correctAnswerIndices: [1],
     category: Category.LEGAL_TAX
   },
@@ -1944,10 +2932,10 @@ export const questions: Question[] = [
   },
   {
     id: 94,
-    text: "Kdy je třeba hlásit podezřelý obchod dle AML?",
+    text: "Kedy je potrebné hlásiť podozrivý obchod podľa AML?",
     options: [
       "Jen u klientů bez občanky",
-      "Při jakémkoli podezření na legalizaci výnosů z trestné činnosti nebo financování terorismu",
+      "Při jakémkoli podezření na legalizaci výnosů z trestné činnosti nebo financování terorismus",
       "Nikdy, pokud je to soukromý účet",
       "Pouze při platbě v hotovosti"
     ],
@@ -1970,25 +2958,25 @@ export const questions: Question[] = [
     text: "Jaká je vize společnosti FireGOLD?",
     options: [
       "Vytvořit globální zlatou síť pro vzájemné platby fyzickým zlatem",
-      "FireGold nemá žádnou vizi a uvidíme co dokážeme",
-      "FireGold jako synonymum pro kvalitní spoření do fyzického zlata a stříbra",
-      "Stát se lídrem světového trhu investic do cenných kovů"
+      "FireGold nemá žádnou víziu a uvidíme čo dokážeme",
+      "FireGold ako synonymum pro kvalitné sporenie do fyzického zlata a striebra",
+      "Stať sa lídrom svetového trhu investicí do cenných kovov"
     ],
     explanation: "Vizí je vrátit do oběhu opravdové peníze (zlato) a vytvořit alternativní platební systém podložený fyzickým zlatem.",
     text_sk: "Aká je vízia spoločnosti FireGOLD?",
     options_sk: [
       "Vytvoriť globálnu zlatú sieť pre vzájomné platby fyzickým zlatom",
       "FireGold nemá žiadnu víziu a uvidíme čo dokážeme",
-      "FireGold ako synonymum pre kvalitné sporenie do fyzického zlata a striebra",
-      "Stať sa lídrom svetového trhu investícií do cenných kovov"
+      "FireGold ako synonymum pro kvalitné sporenie do fyzického zlata a striebra",
+      "Stať sa lídrom svetového trhu investicí do cenných kovov"
     ],
-    explanation_sk: "Víziou je vrátiť do obehu ozajstné peniaze (zlato) a vytvoriť alternatívny platobný systém podložený fyzickým zlatom.",
+    explanation_sk: "Víziou je vrátiť do obehu ozajstné peniaze (zlato) a vytvoriť alternatívny platobný systém podložený fyzickým zlatem.",
     correctAnswerIndices: [0],
     category: Category.ETHICS_COMPANY
   },
   {
     id: 95,
-    text: "Jak by měl etický partner společnosti FireGOLD mluvit o konkurenčních produktech?",
+    text: "Jak by měl etický partner společnosti FireGOLD mluvit o konkurenčních produktoch?",
     options: [
       "Očernit je, aby lépe vynikl FireGOLD a jím nabízené produkty",
       "Tvrdit, že nic jiného než naše produkty nemá smysl",
@@ -2020,7 +3008,7 @@ export const questions: Question[] = [
     text_sk: "Čo je hlavným cieľom partnera FireGOLD?",
     options_sk: [
       "Predať za každú cenu",
-      "Pomôcť klientovi ochrániť a zhodnotiť majetok pomocou zlata",
+      "Pomôcť klientovi ochraniť a zhodnotiť majetok pomocou zlata",
       "Získať províziu a už sa neozvať",
       "Presvedčiť klienta k zadlženiu kvôli investícii"
     ],
@@ -2079,7 +3067,7 @@ export const questions: Question[] = [
       "Lhostejnost k potřebám klienta",
       "Snahu o rychlý zisk"
     ],
-    explanation: "FireGOLD si zakládá na dobrém jménu, které tvoří odborní a důvěryhodní partneři.",
+    explanation: "FireGOLD si zakládá na dobrom jménu, které tvoří odborní a důvěryhodní partneři.",
     text_sk: "Aké hodnoty by mal partner FireGOLD reprezentovať?",
     options_sk: [
       "Dravosť a agresivitu",

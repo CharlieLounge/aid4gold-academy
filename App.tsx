@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from './contexts/ThemeContext';
 import { questions } from './data/questions';
-import { Category, Question, TestMode } from './types';
+import { Category, Question, TestMode, StudyHelpObject } from './types';
 import { 
   IconCheck, IconX, IconMoon, IconSun, IconBook, IconAward, 
   IconChart, IconArrowRight, IconArrowLeft, IconRefresh, IconHome, IconBookmark,
-  IconSettings, IconInfo
+  IconSettings, IconInfo, IconHelp, IconClose
 } from './components/IconComponents';
 
 // --- ASSETS ---
 const LOGO_LIGHT = "https://storage.googleapis.com/msgsndr/ZHNl4kqrSx66h0YqV4Un/media/69418ecd75b607ccd02bfe07.png";
-const LOGO_DARK = "https://storage.googleapis.com/msgsndr/ZHNl4kqrSx66h0YqV4Un/media/69418ecaca72984d2e3dc14f.png";
+const LOGO_DARK = "https://storage.googleapis.com/msgsndr/iNNiZuenpqXYxyCSZaNX/media/694f18bfe889d33cbb7f0b10.png";
 const FLAG_CZ = "https://storage.googleapis.com/msgsndr/ZHNl4kqrSx66h0YqV4Un/media/69406d9bb4f4204c1e6cdf88.png";
 const FLAG_SK = "https://storage.googleapis.com/msgsndr/ZHNl4kqrSx66h0YqV4Un/media/69406d9bca72982763169215.png";
 
@@ -22,7 +22,7 @@ const translations = {
     subtitle: "Váš průvodce k úspěšné certifikaci",
     training: "Trénink",
     selectCategories: "Vyberte kategorie:",
-    multiChoiceHelp: "Nápověda u otázek s více odpověďmi",
+    multiChoiceHelp: "Upozornit, pokud má otázka více správných odpovědí",
     savedQuestions: "Uložené otázky",
     startSelected: "Spustit trénink vybraných",
     startFull: "Kompletní cvičný test (vše)",
@@ -61,14 +61,22 @@ const translations = {
     score: "Skóre",
     reviewTest: "Detail testu",
     backToHistory: "Zpět na historii",
-    noSessions: "Zatím jste nedokončili žádný test."
+    noSessions: "Zatím jste nedokončili žádný test.",
+    help: "Nápověda k tématu",
+    hintsDatabase: "Databáze nápověd",
+    hintsSubtitle: "Přehled všech studijních nápověd podle kategorií",
+    comingSoon: "Již brzy",
+    searchPlaceholder: "Hledat otázku...",
+    noHintsFound: "Nic nenalezeno.",
+    hintsCount: "nápověd",
+    openHint: "Otevřít"
   },
   sk: {
     title: "FireGOLD Academy",
     subtitle: "Váš sprievodca k úspešnej certifikácii",
     training: "Tréning",
     selectCategories: "Vyberte kategórie:",
-    multiChoiceHelp: "Nápoveda pri otázkach s viacerými odpoveďami",
+    multiChoiceHelp: "Upozorniť, ak má otázka viac správnych odpovedí",
     savedQuestions: "Uložené otázky",
     startSelected: "Spustiť tréning vybraných",
     startFull: "Kompletný cvičný test (všetko)",
@@ -99,7 +107,7 @@ const translations = {
     multiChoiceHint: "Otázka môže mať viac správnych odpovedí.",
     selectAnswers: "Vyberte správne možnosti",
     resultCorrect: "Správna odpoveď (+1 bod)",
-    resultWrong: "Chybná odpověď (0 bodov)",
+    resultWrong: "Chybná odpoveď (0 bodov)",
     correctAnswersList: "Všetky správne odpovede:",
     viewHistory: "História testov",
     historyTitle: "Vaša história",
@@ -107,7 +115,15 @@ const translations = {
     score: "Skóre",
     reviewTest: "Detail testu",
     backToHistory: "Späť na históriu",
-    noSessions: "Zatiaľ ste nedokončili žiadny test."
+    noSessions: "Zatiaľ ste nedokončili žiadny test.",
+    help: "Nápoveda k téme",
+    hintsDatabase: "Databáza nápovedí",
+    hintsSubtitle: "Prehľad všetkých študijných nápovedí podľa kategórií",
+    comingSoon: "Už čoskoro",
+    searchPlaceholder: "Hľadať otázku...",
+    noHintsFound: "Nič sa nenašlo.",
+    hintsCount: "nápovedí",
+    openHint: "Otvoriť"
   }
 };
 
@@ -117,7 +133,7 @@ const categoryTranslations: Record<string, Record<Category, string>> = {
     [Category.PRODUCTS]: "Produkty a procesy (iiplan)",
     [Category.FEES_COSTS]: "Poplatky a náklady",
     [Category.COMMISSIONS]: "Provize a kariéra",
-    [Category.LEGAL_TAX]: "Legislatíva, daně a AML",
+    [Category.LEGAL_TAX]: "Legislativa, daně a AML",
     [Category.ETHICS_COMPANY]: "O společnosti a etika"
   },
   sk: {
@@ -150,10 +166,32 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { variant
   );
 };
 
-const ProgressChart = ({ data, labels }: { data: number[], labels: { noData: string, cert: string } }) => {
-  if (!data || data.length === 0) {
+interface TestSession {
+  id: number;
+  date: string;
+  percentage: number;
+  correctCount: number;
+  totalCount: number;
+  mode: string;
+  answers: {
+    questionId: number;
+    userSelection: number[];
+    isCorrect: boolean;
+  }[];
+}
+
+const ProgressChart = ({ 
+  sessions, 
+  onBarClick,
+  labels 
+}: { 
+  sessions: TestSession[], 
+  onBarClick: (session: TestSession) => void,
+  labels: { noData: string, cert: string } 
+}) => {
+  if (!sessions || sessions.length === 0) {
     return (
-      <div className="h-[150px] flex items-center justify-center text-gray-400 text-sm border-2 border-dashed border-gray-200 dark:border-slate-700 rounded-xl">
+      <div className="h-[150px] flex items-center justify-center text-gray-400 dark:text-gray-300 text-sm border-2 border-dashed border-gray-200 dark:border-slate-700 rounded-xl">
         {labels.noData}
       </div>
     );
@@ -161,7 +199,7 @@ const ProgressChart = ({ data, labels }: { data: number[], labels: { noData: str
 
   const certLevel = 100 - 85; 
   const minSlots = 10;
-  const effectiveCount = Math.max(data.length, minSlots);
+  const effectiveCount = Math.max(sessions.length, minSlots);
   
   return (
     <div className="w-full h-[120px] mt-4 relative overflow-hidden">
@@ -174,16 +212,25 @@ const ProgressChart = ({ data, labels }: { data: number[], labels: { noData: str
         <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeOpacity="0.1" className="text-gray-500" strokeWidth="0.5" />
         <line x1="0" y1="100" x2="100" y2="100" stroke="currentColor" strokeOpacity="0.1" className="text-gray-500" strokeWidth="0.5" />
         <line x1="0" y1={certLevel} x2="100" y2={certLevel} className="text-green-500 dark:text-green-400 opacity-60" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 2" />
-        {data.map((score, index) => {
+        {sessions.map((session, index) => {
           const slotWidth = 100 / Number(effectiveCount);
           const gap = Number(slotWidth) * 0.1;
           const barWidth = Number(slotWidth) - Number(gap);
           const x = Number(index) * Number(slotWidth) + (Number(gap) / 2);
-          const y = 100 - Number(score);
-          const isPassing = Number(score) >= 85;
+          const y = 100 - Number(session.percentage);
+          const isPassing = Number(session.percentage) >= 85;
           return (
-            <rect key={index} x={x} y={y} width={barWidth} height={score} rx="1" className={`${isPassing ? 'fill-green-500 dark:fill-green-400' : 'fill-yellow-500'} transition-all duration-300 hover:opacity-80`}>
-              <title>{score}%</title>
+            <rect 
+              key={session.id} 
+              x={x} 
+              y={y} 
+              width={barWidth} 
+              height={session.percentage} 
+              rx="1" 
+              onClick={() => onBarClick(session)}
+              className={`${isPassing ? 'fill-green-500 dark:fill-green-400' : 'fill-yellow-500'} cursor-pointer transition-all duration-300 hover:opacity-80 origin-bottom hover:scale-y-[1.02]`}
+            >
+              <title>{session.date}: {session.percentage}%</title>
             </rect>
           );
         })}
@@ -205,21 +252,22 @@ const isCorrectAnswer = (userSelection: number[], correctIndices: number[]): boo
          userSelection.every(val => correctIndices.includes(val));
 };
 
-// --- APP COMPONENT ---
+/**
+ * Nahrazuje mezery za jednopísmennými předložkami a spojkami za nezalomitelné mezery (\u00A0).
+ * Také ošetřuje české spojovníky a pomlčky.
+ */
+const formatCzechTypo = (text: string | undefined): string => {
+  if (!text) return '';
+  // Jednopísmenné předložky a spojky na konci řádku (v, k, s, z, o, u, i, a)
+  let formatted = text.replace(/ ([vkiszoua]) /gi, ' $1\u00A0');
+  // Počáteční předložky na začátku odstavce
+  formatted = formatted.replace(/^([vkiszoua]) /gi, '$1\u00A0');
+  // Pomlčky (en dash) a spojovníky
+  formatted = formatted.replace(/ – /g, '\u00A0– ');
+  return formatted;
+};
 
-interface TestSession {
-  id: number;
-  date: string;
-  percentage: number;
-  correctCount: number;
-  totalCount: number;
-  mode: string;
-  answers: {
-    questionId: number;
-    userSelection: number[];
-    isCorrect: boolean;
-  }[];
-}
+// --- APP COMPONENT ---
 
 interface AppStats {
   totalTests: number;
@@ -255,7 +303,7 @@ function App() {
 
   const t = translations[lang];
 
-  const [view, setView] = useState<'menu' | 'test' | 'results' | 'history' | 'session_detail'>('menu');
+  const [view, setView] = useState<'menu' | 'test' | 'results' | 'history' | 'session_detail' | 'hints'>('menu');
   const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<(number[] | null)[]>([]);
@@ -263,6 +311,9 @@ function App() {
   const [showExplanation, setShowExplanation] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
   const [selectedSession, setSelectedSession] = useState<TestSession | null>(null);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [selectedHelpQuestion, setSelectedHelpQuestion] = useState<Question | null>(null);
+  const [hintSearchQuery, setHintSearchQuery] = useState('');
   
   const [savedQuestionIds, setSavedQuestionIds] = useState<number[]>(() => {
     const saved = localStorage.getItem('firegold_saved_questions');
@@ -398,6 +449,30 @@ function App() {
     }
   };
 
+  // Keyboard shortcut for Enter and Escape (help)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isHelpOpen) {
+        setIsHelpOpen(false);
+        return;
+      }
+      
+      if (e.key === 'Enter' && view === 'test' && !isHelpOpen) {
+        const isSubmitted = answers[currentQuestionIndex] !== null;
+        if (!isSubmitted) {
+          if (currentSelection.length > 0) {
+            submitAnswer();
+          }
+        } else {
+          nextQuestion();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [view, currentQuestionIndex, answers, currentSelection, isHelpOpen]);
+
   const openSessionDetail = (session: TestSession) => {
     setSelectedSession(session);
     setView('session_detail');
@@ -414,30 +489,144 @@ function App() {
     .sort((a, b) => (Number(b.count) || 0) - (Number(a.count) || 0))
     .slice(0, 3);
 
+  // Get chronological last 20 sessions for the chart
+  const chartSessions = [...stats.sessions].slice(0, 20).reverse();
+
   // --- VIEWS ---
+
+  const renderHelpModal = (q: Question | null) => {
+    if (!isHelpOpen || !q) return null;
+    
+    // Pick the right help based on language
+    const help = lang === 'sk' && q.studyHelp_sk ? q.studyHelp_sk : q.studyHelp;
+    
+    if (!help) return null;
+
+    const isObject = typeof help === 'object';
+    const helpObj = isObject ? (help as StudyHelpObject) : null;
+
+    return (
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div 
+          className="absolute inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm" 
+          onClick={() => setIsHelpOpen(false)}
+        />
+        <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl w-full max-w-xl relative z-10 overflow-hidden animate-fade-in-down flex flex-col max-h-[85vh]">
+          {/* Header */}
+          <div className="p-6 md:p-8 border-b border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 sticky top-0 z-10">
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="text-xl md:text-2xl font-black text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                <IconHelp /> {formatCzechTypo(t.help)}
+              </h2>
+              <button 
+                onClick={() => setIsHelpOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors text-gray-500"
+              >
+                <IconClose />
+              </button>
+            </div>
+            {isObject && helpObj?.meta && (
+              <div className="flex flex-wrap gap-2">
+                {helpObj.meta.topic && (
+                  <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-[10px] font-black uppercase tracking-wider rounded-md border border-blue-100 dark:border-blue-800">
+                    📌 {formatCzechTypo(helpObj.meta.topic)}
+                  </span>
+                )}
+                {helpObj.meta.readTime && (
+                  <span className="px-2 py-0.5 bg-gray-50 dark:bg-slate-700 text-gray-600 dark:text-gray-300 text-[10px] font-black uppercase tracking-wider rounded-md border border-gray-100 dark:border-slate-600">
+                    ⏱️ {formatCzechTypo(helpObj.meta.readTime)}
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Content */}
+          <div 
+            className="overflow-y-auto p-6 md:p-8 custom-scrollbar flex-1 bg-gray-50/30 dark:bg-slate-900/20"
+            style={{ textWrap: 'pretty', overflowWrap: 'anywhere', wordBreak: 'normal', hyphens: 'none' } as any}
+          >
+            {!isObject ? (
+              <div className="text-gray-800 dark:text-gray-100 whitespace-pre-wrap leading-relaxed text-sm md:text-base font-medium">
+                {formatCzechTypo(help as string)}
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {helpObj?.sections.map((section, idx) => (
+                  <div 
+                    key={idx} 
+                    className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="flex items-start gap-3 mb-2">
+                      {section.icon && (
+                        <span className="text-xl md:text-2xl flex-shrink-0 mt-0.5">{section.icon}</span>
+                      )}
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                        {formatCzechTypo(section.title)}
+                      </h3>
+                    </div>
+                    
+                    {section.text && (
+                      <p className="text-sm md:text-base text-gray-700 dark:text-gray-200 leading-relaxed font-medium">
+                        {formatCzechTypo(section.text)}
+                      </p>
+                    )}
+
+                    {section.bullets && section.bullets.length > 0 && (
+                      <ul className="mt-3 space-y-2 list-none">
+                        {section.bullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-3 text-sm md:text-base text-gray-700 dark:text-gray-200 leading-snug font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
+                            <span>{formatCzechTypo(bullet)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Footer */}
+          <div className="p-6 border-t border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800">
+            <Button onClick={() => setIsHelpOpen(false)} className="w-full py-3">Rozumím</Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const renderMenu = () => (
     <div className="max-w-7xl mx-auto p-4 md:p-8 flex flex-col justify-center min-h-[calc(100vh-80px)] w-full">
       <div className="text-center mb-6 animate-fade-in-down flex flex-col items-center">
         <img src={theme === 'dark' ? LOGO_DARK : LOGO_LIGHT} alt="FireGOLD Academy" className="h-32 md:h-40 w-auto object-contain mb-4" />
-        <p className="text-gray-600 dark:text-gray-300 text-lg break-words max-w-full">{t.subtitle}</p>
+        <p className="text-gray-600 dark:text-gray-100 text-lg break-words max-w-full font-medium">{t.subtitle}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 w-full items-start">
         {/* Training Card */}
         <div className="bg-white dark:bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 w-full overflow-hidden">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
-            <IconBook /> {t.training}
-          </h2>
+          <div className="flex justify-between items-center mb-6 gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white flex items-center gap-2 flex-1 leading-tight">
+              <IconBook /> <span>{t.training}</span>
+            </h2>
+            <button 
+              onClick={() => setView('hints')}
+              className="text-sm font-bold text-yellow-600 dark:text-yellow-400 hover:underline flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+            >
+              {t.hintsDatabase} <IconArrowRight />
+            </button>
+          </div>
           
           <div className="space-y-4 mb-6">
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{t.selectCategories}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-300 mb-2 font-medium">{t.selectCategories}</p>
             <div className="flex flex-wrap gap-2">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategories(prev => prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat])}
-                  className={`px-3 py-1.5 rounded-full text-sm transition-colors break-words max-w-full ${selectedCategories.includes(cat) ? 'bg-yellow-500 text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300'}`}
+                  className={`px-3 py-1.5 rounded-full text-sm transition-colors break-words max-w-full font-medium ${selectedCategories.includes(cat) ? 'bg-yellow-500 text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-800 dark:text-gray-200'}`}
                 >
                   {categoryTranslations[lang][cat]}
                 </button>
@@ -451,7 +640,7 @@ function App() {
                   <div className={`block w-10 h-6 rounded-full transition-colors ${multiChoiceHelpEnabled ? 'bg-yellow-500' : 'bg-gray-300 dark:bg-slate-600'}`}></div>
                   <div className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 transform ${multiChoiceHelpEnabled ? 'translate-x-4' : ''}`}></div>
                 </div>
-                <div className="ml-3 text-sm text-gray-700 dark:text-gray-300 font-medium group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+                <div className="ml-3 text-sm text-gray-700 dark:text-gray-200 font-bold group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors leading-tight">
                   {t.multiChoiceHelp}
                 </div>
               </label>
@@ -463,8 +652,8 @@ function App() {
                   onClick={() => startTest('saved')}
                   className="flex items-center justify-between px-4 py-3 rounded-xl border-2 border-yellow-500/50 bg-yellow-50 dark:bg-yellow-900/10 hover:bg-yellow-100 dark:hover:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200 transition-colors w-full"
                 >
-                  <span className="flex items-center gap-2 font-medium min-w-0"><IconBookmark filled /> <span className="break-words text-left leading-tight">{t.savedQuestions}</span></span>
-                  <span className="bg-yellow-200 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-100 text-xs px-2 py-1 rounded-full flex-shrink-0 ml-2">{savedQuestionIds.length}</span>
+                  <span className="flex items-center gap-2 font-bold min-w-0"><IconBookmark filled /> <span className="break-words text-left leading-tight">{t.savedQuestions}</span></span>
+                  <span className="bg-yellow-200 dark:bg-yellow-800 text-yellow-900 dark:text-yellow-50 text-xs px-2 py-1 rounded-full font-black flex-shrink-0 ml-2">{savedQuestionIds.length}</span>
                 </button>
               )}
               {mistakeQuestionsCount > 0 && (
@@ -472,8 +661,8 @@ function App() {
                   onClick={() => startTest('mistakes')}
                   className="flex items-center justify-between px-4 py-3 rounded-xl border-2 border-red-500/50 bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 text-red-800 dark:text-red-200 transition-colors w-full"
                 >
-                  <span className="flex items-center gap-2 font-medium min-w-0"><IconX /> <span className="break-words text-left leading-tight">{t.startMistakes}</span></span>
-                  <span className="bg-red-200 dark:bg-red-800 text-red-800 dark:text-red-100 text-xs px-2 py-1 rounded-full flex-shrink-0 ml-2">{mistakeQuestionsCount}</span>
+                  <span className="flex items-center gap-2 font-bold min-w-0"><IconX /> <span className="break-words text-left leading-tight">{t.startMistakes}</span></span>
+                  <span className="bg-red-200 dark:bg-red-800 text-red-900 dark:text-red-50 text-xs px-2 py-1 rounded-full font-black flex-shrink-0 ml-2">{mistakeQuestionsCount}</span>
                 </button>
               )}
             </div>
@@ -497,27 +686,31 @@ function App() {
             </h2>
             <button 
               onClick={() => setView('history')}
-              className="text-sm font-semibold text-yellow-600 dark:text-yellow-400 hover:underline flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+              className="text-sm font-bold text-yellow-600 dark:text-yellow-400 hover:underline flex items-center gap-1 whitespace-nowrap flex-shrink-0"
             >
               {t.viewHistory} <IconArrowRight />
             </button>
           </div>
           <div className="grid grid-cols-2 gap-4 text-center mb-6">
             <div className="p-4 bg-yellow-50 dark:bg-slate-700/50 rounded-xl min-w-0">
-              <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400 truncate">{stats.totalTests}</div>
-              <div className="text-[10px] text-gray-600 dark:text-gray-400 uppercase tracking-wider leading-tight">{t.finishedTests}</div>
+              <div className="text-3xl font-black text-yellow-600 dark:text-yellow-400 truncate">{stats.totalTests}</div>
+              <div className="text-[10px] text-gray-700 dark:text-gray-100 font-black uppercase tracking-wider leading-tight">{t.finishedTests}</div>
             </div>
             <div className="p-4 bg-yellow-50 dark:bg-slate-700/50 rounded-xl min-w-0">
-              <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400 truncate">
+              <div className="text-3xl font-black text-yellow-600 dark:text-yellow-400 truncate">
                 {Number(stats.totalQuestions) > 0 ? Math.round((Number(stats.totalCorrect) / Number(stats.totalQuestions)) * 100) : 0}%
               </div>
-              <div className="text-[10px] text-gray-600 dark:text-gray-400 uppercase tracking-wider leading-tight">{t.successRate}</div>
+              <div className="text-[10px] text-gray-700 dark:text-gray-100 font-black uppercase tracking-wider leading-tight">{t.successRate}</div>
             </div>
           </div>
           
           <div className="mb-6 w-full">
-             <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">{t.trend}</div>
-             <ProgressChart data={stats.history} labels={{ noData: t.noData, cert: t.certification }} />
+             <div className="text-sm font-bold text-gray-500 dark:text-gray-300 mb-2">{t.trend}</div>
+             <ProgressChart 
+               sessions={chartSessions} 
+               onBarClick={openSessionDetail}
+               labels={{ noData: t.noData, cert: t.certification }} 
+             />
           </div>
 
           <div className="w-full">
@@ -526,17 +719,17 @@ function App() {
                <div className="space-y-2">
                  {topMistakes.map((item, idx) => (
                    <div key={idx} className="flex items-start justify-between p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm border border-gray-100 dark:border-slate-700 shadow-sm gap-3 w-full">
-                     <span className="flex-1 min-w-0 text-gray-700 dark:text-gray-200 font-medium break-words leading-tight">
+                     <span className="flex-1 min-w-0 text-gray-800 dark:text-white font-bold break-words leading-tight">
                        {lang === 'sk' && item.question?.text_sk ? item.question.text_sk : item.question?.text}
                      </span>
-                     <span className="font-bold text-red-500 bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded-full border border-red-200 dark:border-red-800 flex-shrink-0 text-xs">
+                     <span className="font-black text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded-full border border-red-200 dark:border-red-800 flex-shrink-0 text-xs">
                        {item.count}x
                      </span>
                    </div>
                  ))}
                </div>
              ) : (
-               <div className="text-sm text-gray-400 italic text-center p-4 border border-dashed border-gray-200 dark:border-slate-700 rounded-xl">
+               <div className="text-sm text-gray-400 dark:text-gray-300 italic text-center p-4 border border-dashed border-gray-200 dark:border-slate-700 rounded-xl">
                  {t.noMistakes}
                </div>
              )}
@@ -561,7 +754,7 @@ function App() {
         <div className="flex justify-between items-center mb-6 gap-2">
           <Button variant="secondary" onClick={() => setView('menu')} className="!px-3 flex-shrink-0"><IconHome /></Button>
           <div className="flex-1 mx-2 min-w-0">
-            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-200 font-bold mb-1">
               <span className="truncate">{t.question} {Number(currentQuestionIndex) + 1} / {activeQuestions.length}</span>
               <span>{activeQuestions.length > 0 ? Math.round((Number(currentQuestionIndex) / Number(activeQuestions.length)) * 100) : 0}%</span>
             </div>
@@ -569,23 +762,34 @@ function App() {
               <div className="h-full bg-yellow-500 transition-all duration-300" style={{ width: `${activeQuestions.length > 0 ? (Number(currentQuestionIndex) / Number(activeQuestions.length)) * 100 : 0}%` }} />
             </div>
           </div>
-          <div className="text-[10px] px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 hidden sm:block truncate max-w-[120px]">{categoryTranslations[lang][question.category]}</div>
+          <div className="text-[10px] px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-900/40 text-yellow-900 dark:text-yellow-100 font-black hidden sm:block truncate max-w-[120px] uppercase tracking-tighter">{categoryTranslations[lang][question.category]}</div>
         </div>
 
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 md:p-10 flex-1 relative w-full overflow-hidden">
           <div className="flex justify-between items-start gap-4 mb-4">
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-white leading-relaxed break-words flex-1 min-w-0">{lang === 'sk' && question.text_sk ? question.text_sk : question.text}</h3>
-            <button onClick={(e) => toggleSavedQuestion(e, question.id)} className={`p-2 rounded-full transition-colors flex-shrink-0 ${isSaved ? 'text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20' : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100 dark:hover:bg-slate-700'}`} title={isSaved ? t.removeQuestion : t.saveQuestion}>
+            <div className="flex-1 min-w-0 flex items-start gap-3">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white leading-relaxed break-words flex-1">{lang === 'sk' && question.text_sk ? question.text_sk : question.text}</h3>
+              {!!(question.studyHelp || question.studyHelp_sk) && (
+                <button 
+                  onClick={() => { setSelectedHelpQuestion(question); setIsHelpOpen(true); }}
+                  className="p-1.5 mt-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:scale-110 transition-all shadow-sm flex-shrink-0"
+                  title={t.help}
+                >
+                  <IconHelp />
+                </button>
+              )}
+            </div>
+            <button onClick={(e) => toggleSavedQuestion(e, question.id)} className={`p-2 rounded-full transition-colors flex-shrink-0 ${isSaved ? 'text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20' : 'text-gray-400 dark:text-gray-300 hover:text-yellow-500 hover:bg-gray-100 dark:hover:bg-slate-700'}`} title={isSaved ? t.removeQuestion : t.saveQuestion}>
               <IconBookmark filled={isSaved} />
             </button>
           </div>
 
           {showHint && (
-            <div className="mb-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 flex items-center gap-3 w-full">
-               <div className="text-blue-500 dark:text-blue-400 flex-shrink-0"><IconInfo /></div>
+            <div className="mb-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 flex items-center gap-3 w-full">
+               <div className="text-blue-500 dark:text-blue-300 flex-shrink-0"><IconInfo /></div>
                <div className="min-w-0">
-                  <p className="text-sm font-medium text-blue-900 dark:text-blue-100 break-words">{t.multiChoiceHint}</p>
-                  <p className="text-xs text-blue-700 dark:text-blue-300 break-words">{t.selectAnswers}</p>
+                  <p className="text-sm font-bold text-blue-900 dark:text-blue-100 break-words">{t.multiChoiceHint}</p>
+                  <p className="text-xs text-blue-800 dark:text-blue-200 break-words font-medium">{t.selectAnswers}</p>
                </div>
             </div>
           )}
@@ -596,14 +800,14 @@ function App() {
               const isCorrectOption = question.correctAnswerIndices.includes(idx);
               let buttonStyle = "border-gray-200 dark:border-slate-600 hover:border-yellow-500 dark:hover:border-yellow-500 hover:bg-yellow-50 dark:hover:bg-slate-700";
               if (isSubmitted) {
-                if (isSelected && isCorrectOption) buttonStyle = "bg-green-100 dark:bg-green-900/30 border-green-500 text-green-800 dark:text-green-200";
-                else if (isSelected && !isCorrectOption) buttonStyle = "bg-red-100 dark:bg-red-900/30 border-red-500 text-red-800 dark:text-red-200";
-                else if (!isSelected && isCorrectOption) buttonStyle = "border-green-500 border-dashed text-green-800 dark:text-green-200 opacity-70";
+                if (isSelected && isCorrectOption) buttonStyle = "bg-green-100 dark:bg-green-900/30 border-green-500 text-green-900 dark:text-green-100";
+                else if (isSelected && !isCorrectOption) buttonStyle = "bg-red-100 dark:bg-red-900/30 border-red-500 text-red-900 dark:text-red-100";
+                else if (!isSelected && isCorrectOption) buttonStyle = "border-green-500 border-dashed text-green-800 dark:text-green-200 opacity-100";
                 else buttonStyle = "border-gray-100 dark:border-slate-700 opacity-50";
               } else if (isSelected) buttonStyle = "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-900 dark:text-yellow-100 ring-1 ring-yellow-500";
 
               return (
-                <button key={idx} onClick={() => handleOptionClick(idx)} disabled={isSubmitted} className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 text-base md:text-lg ${buttonStyle} text-gray-700 dark:text-gray-200 overflow-hidden`}>
+                <button key={idx} onClick={() => handleOptionClick(idx)} disabled={isSubmitted} className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 text-base md:text-lg font-medium ${buttonStyle} text-gray-800 dark:text-gray-100 overflow-hidden`}>
                   <div className="flex items-start gap-3 w-full">
                     <div className="mt-1 min-w-[24px] h-6 flex items-center justify-center flex-shrink-0">
                       {isSubmitted ? (
@@ -623,12 +827,12 @@ function App() {
 
           {showExplanation && (
             <div className={`mt-8 p-6 rounded-xl border-l-4 animate-fade-in w-full ${isQuestionCorrect ? "bg-green-50 border-green-500 dark:bg-green-900/20" : "bg-red-50 border-red-500 dark:bg-red-900/20"}`}>
-              <div className={`font-bold text-lg mb-4 flex items-center gap-2 ${isQuestionCorrect ? "text-green-700 dark:text-green-400" : "text-red-700 dark:text-red-400"}`}>
+              <div className={`font-black text-lg mb-4 flex items-center gap-2 ${isQuestionCorrect ? "text-green-800 dark:text-green-300" : "text-red-800 dark:text-red-300"}`}>
                 <div className="flex-shrink-0">{isQuestionCorrect ? <IconCheck /> : <IconX />}</div>
                 <span className="break-words">{isQuestionCorrect ? t.resultCorrect : t.resultWrong}</span>
               </div>
-              <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-2">{t.explanation}</h4>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed break-words">{lang === 'sk' && question.explanation_sk ? question.explanation_sk : question.explanation}</p>
+              <h4 className="font-black text-gray-900 dark:text-white mb-2">{t.explanation}</h4>
+              <p className="text-gray-800 dark:text-gray-100 leading-relaxed break-words font-medium">{lang === 'sk' && question.explanation_sk ? question.explanation_sk : question.explanation}</p>
             </div>
           )}
         </div>
@@ -642,6 +846,8 @@ function App() {
             </Button>
           )}
         </div>
+
+        {renderHelpModal(selectedHelpQuestion)}
       </div>
     );
   };
@@ -662,21 +868,21 @@ function App() {
               className="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 flex justify-between items-center hover:border-yellow-500 dark:hover:border-yellow-500 cursor-pointer transition-all hover:scale-[1.01] gap-4 w-full overflow-hidden"
             >
               <div className="min-w-0 flex-1">
-                <div className="text-[10px] font-bold text-yellow-600 dark:text-yellow-400 uppercase tracking-widest mb-1 truncate">{session.date}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 truncate">{session.correctCount} / {session.totalCount} {t.correct.toLowerCase()}</div>
+                <div className="text-[10px] font-black text-yellow-600 dark:text-yellow-400 uppercase tracking-widest mb-1 truncate">{session.date}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-200 font-bold truncate">{session.correctCount} / {session.totalCount} {t.correct.toLowerCase()}</div>
               </div>
               <div className="flex items-center gap-3 flex-shrink-0">
-                <div className={`text-xl md:text-2xl font-black ${session.percentage >= 85 ? 'text-green-500' : 'text-yellow-500'}`}>
+                <div className={`text-xl md:text-2xl font-black ${session.percentage >= 85 ? 'text-green-600 dark:text-green-400' : 'text-yellow-600 dark:text-yellow-400'}`}>
                   {session.percentage}%
                 </div>
-                <IconArrowRight />
+                <div className="text-gray-400 dark:text-gray-300"><IconArrowRight /></div>
               </div>
             </div>
           ))}
         </div>
       ) : (
         <div className="text-center p-20 bg-white dark:bg-slate-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-slate-700 w-full">
-          <p className="text-gray-400">{t.noSessions}</p>
+          <p className="text-gray-500 dark:text-gray-300 font-medium">{t.noSessions}</p>
         </div>
       )}
     </div>
@@ -692,16 +898,16 @@ function App() {
             <div className="flex items-center gap-2 sm:gap-4 min-w-0">
               <Button variant="secondary" onClick={() => setView('history')} className="!p-2 sm:!px-3 group flex-shrink-0">
                 <IconArrowLeft className="transition-transform group-hover:-translate-x-1" />
-                <span className="hidden md:inline ml-1">{t.backToHistory}</span>
+                <span className="hidden md:inline ml-1 font-bold">{t.backToHistory}</span>
               </Button>
               <div className="h-10 w-px bg-gray-200 dark:bg-slate-700 hidden sm:block"></div>
               <div className="min-w-0">
-                <h2 className="text-base sm:text-xl font-bold text-gray-800 dark:text-white leading-tight truncate">{t.reviewTest}</h2>
-                <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 font-medium truncate">{selectedSession.date}</p>
+                <h2 className="text-base sm:text-xl font-black text-gray-800 dark:text-white leading-tight truncate">{t.reviewTest}</h2>
+                <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-200 font-bold truncate">{selectedSession.date}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-              <div className={`text-xl sm:text-3xl font-black ${selectedSession.percentage >= 85 ? 'text-green-500' : 'text-yellow-500'}`}>
+              <div className={`text-xl sm:text-3xl font-black ${selectedSession.percentage >= 85 ? 'text-green-600 dark:text-green-400' : 'text-yellow-600 dark:text-yellow-400'}`}>
                 {selectedSession.percentage}%
               </div>
               <Button variant="outline" onClick={() => setView('menu')} className="!p-2 sm:!px-3" title={t.backToMenu}>
@@ -718,7 +924,7 @@ function App() {
               <div key={idx} className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-700 transition-all hover:shadow-2xl w-full">
                 <div className="p-6 md:p-8">
                   <div className="flex justify-between items-start gap-4 mb-6">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-white leading-relaxed break-words flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-black text-gray-800 dark:text-white leading-relaxed break-words flex-1 min-w-0">
                       <span className="text-yellow-600 dark:text-yellow-500 mr-2">{idx + 1}.</span>
                       {lang === 'sk' && question.text_sk ? question.text_sk : question.text}
                     </h3>
@@ -733,9 +939,9 @@ function App() {
                       const isCorrectOption = question.correctAnswerIndices.includes(optIdx);
                       
                       let style = "border-gray-100 dark:border-slate-700 opacity-60";
-                      if (isSelected && isCorrectOption) style = "bg-green-50 dark:bg-green-900/20 border-green-500 text-green-800 dark:text-green-200 opacity-100";
-                      else if (isSelected && !isCorrectOption) style = "bg-red-50 dark:bg-red-900/20 border-red-500 text-red-800 dark:text-red-200 opacity-100";
-                      else if (!isSelected && isCorrectOption) style = "border-green-500 border-dashed text-green-800 dark:text-green-200 opacity-100";
+                      if (isSelected && isCorrectOption) style = "bg-green-50 dark:bg-green-900/20 border-green-500 text-green-900 dark:text-green-100 opacity-100 font-bold";
+                      else if (isSelected && !isCorrectOption) style = "bg-red-50 dark:bg-red-900/20 border-red-500 text-red-900 dark:text-red-100 opacity-100 font-bold";
+                      else if (!isSelected && isCorrectOption) style = "border-green-500 border-dashed text-green-800 dark:text-green-200 opacity-100 font-bold";
 
                       return (
                         <div key={optIdx} className={`p-4 rounded-xl border-2 text-sm md:text-base flex items-start gap-3 transition-all w-full overflow-hidden ${style}`}>
@@ -749,8 +955,8 @@ function App() {
                   </div>
 
                   <div className="mt-6 p-5 bg-gray-50 dark:bg-slate-900/50 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-inner w-full">
-                    <div className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-2">{t.explanation}</div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed italic break-words">
+                    <div className="text-[10px] font-black text-gray-500 dark:text-gray-200 uppercase tracking-[0.2em] mb-2">{t.explanation}</div>
+                    <p className="text-sm text-gray-700 dark:text-gray-100 leading-relaxed italic break-words font-medium">
                       {lang === 'sk' && question.explanation_sk ? question.explanation_sk : question.explanation}
                     </p>
                   </div>
@@ -780,6 +986,113 @@ function App() {
     );
   };
 
+  const renderHints = () => {
+    // Only GOLD_MARKET is active currently. Filter questions that have studyHelp.
+    const activeCategory = Category.GOLD_MARKET;
+    const categoryQuestions = questions.filter(q => q.category === activeCategory && (q.studyHelp || q.studyHelp_sk));
+    
+    const filteredQuestions = categoryQuestions.filter(q => {
+      const txt = lang === 'sk' && q.text_sk ? q.text_sk : q.text;
+      return txt.toLowerCase().includes(hintSearchQuery.toLowerCase());
+    });
+
+    return (
+      <div className="max-w-4xl mx-auto p-4 md:p-6 min-h-screen w-full overflow-x-hidden animate-fade-in">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+          <div className="flex items-center gap-4 min-w-0">
+            <Button variant="secondary" onClick={() => setView('menu')} className="!px-3 flex-shrink-0"><IconHome /></Button>
+            <div className="min-w-0">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-800 dark:text-white truncate">{t.hintsDatabase}</h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium truncate">{t.hintsSubtitle}</p>
+            </div>
+          </div>
+          <div className="relative w-full md:w-64">
+            <input 
+              type="text" 
+              placeholder={t.searchPlaceholder}
+              value={hintSearchQuery}
+              onChange={(e) => setHintSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none transition-all text-slate-900 dark:text-white font-medium pr-10"
+            />
+            <div className="absolute right-3 top-2.5 text-gray-400"><IconInfo className="w-5 h-5" /></div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Active Category */}
+          <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-lg border border-gray-100 dark:border-slate-700 overflow-hidden">
+            <div className="p-6 md:p-8 bg-yellow-50/50 dark:bg-yellow-900/10 border-b border-gray-100 dark:border-slate-700 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-yellow-500 text-white rounded-lg"><IconBook className="w-5 h-5" /></div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-black text-gray-800 dark:text-white leading-tight">{categoryTranslations[lang][activeCategory]}</h3>
+                  <p className="text-xs text-yellow-700 dark:text-yellow-400 font-bold">{categoryQuestions.length} {t.hintsCount}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="divide-y divide-gray-50 dark:divide-slate-700">
+              {filteredQuestions.length > 0 ? (
+                filteredQuestions.map((q) => {
+                  const help = lang === 'sk' && q.studyHelp_sk ? q.studyHelp_sk : q.studyHelp;
+                  const helpObj = typeof help === 'object' ? (help as StudyHelpObject) : null;
+                  return (
+                    <div 
+                      key={q.id} 
+                      onClick={() => { setSelectedHelpQuestion(q); setIsHelpOpen(true); }}
+                      className="p-5 md:p-6 hover:bg-gray-50 dark:hover:bg-slate-700/30 cursor-pointer transition-colors flex items-center justify-between gap-4 group"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-gray-800 dark:text-gray-100 font-bold mb-2 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors leading-relaxed break-words">
+                          {lang === 'sk' && q.text_sk ? q.text_sk : q.text}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {helpObj?.meta?.topic && (
+                            <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-[10px] font-black uppercase tracking-wider rounded border border-blue-100 dark:border-blue-800">
+                              {formatCzechTypo(helpObj.meta.topic)}
+                            </span>
+                          )}
+                          {helpObj?.meta?.readTime && (
+                            <span className="px-2 py-0.5 bg-gray-50 dark:bg-slate-700 text-gray-600 dark:text-gray-300 text-[10px] font-black uppercase tracking-wider rounded border border-gray-100 dark:border-slate-600">
+                              {formatCzechTypo(helpObj.meta.readTime)}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className="text-gray-400 group-hover:text-yellow-600 transition-all group-hover:translate-x-1 flex items-center gap-2">
+                        <span className="text-xs font-black hidden md:inline uppercase tracking-widest">{t.openHint}</span>
+                        <IconArrowRight />
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="p-12 text-center text-gray-500 dark:text-gray-400 italic">
+                  {t.noHintsFound}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Coming Soon Categories */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 opacity-60">
+            {categories.filter(cat => cat !== activeCategory).map((cat, idx) => (
+              <div key={idx} className="bg-white dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-slate-700 cursor-not-allowed">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-2 bg-gray-100 dark:bg-slate-700 text-gray-400 rounded-lg"><IconInfo className="w-5 h-5" /></div>
+                  <span className="px-2 py-0.5 bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-400 text-[9px] font-black uppercase tracking-widest rounded">{t.comingSoon}</span>
+                </div>
+                <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 leading-snug">{categoryTranslations[lang][cat]}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {renderHelpModal(selectedHelpQuestion)}
+      </div>
+    );
+  };
+
   const renderResults = () => {
     const correctCount = answers.reduce<number>((acc, ans, idx) => {
       if (!ans) return acc;
@@ -797,18 +1110,18 @@ function App() {
             ) : (
               <div className="w-20 h-20 md:w-24 md:h-24 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4"><IconX /></div>
             )}
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-gray-800 dark:text-white break-words">{passed ? t.congrats : t.trainingNeeded}</h2>
-            <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 break-words">{passed ? t.ready : t.notReady}</p>
+            <h2 className="text-2xl md:text-4xl font-black mb-2 text-gray-800 dark:text-white break-words">{passed ? t.congrats : t.trainingNeeded}</h2>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-200 font-bold break-words">{passed ? t.ready : t.notReady}</p>
           </div>
           <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700 mb-8">{percentage}%</div>
-          <div className="grid grid-cols-2 gap-4 mb-10 text-gray-600 dark:text-gray-300 w-full">
+          <div className="grid grid-cols-2 gap-4 mb-10 text-gray-600 dark:text-gray-100 w-full">
             <div className="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl min-w-0">
-              <div className="text-xl md:text-2xl font-bold text-green-500 truncate">{correctCount}</div>
-              <div className="text-xs md:text-sm leading-tight">{t.correct}</div>
+              <div className="text-xl md:text-2xl font-black text-green-600 dark:text-green-400 truncate">{correctCount}</div>
+              <div className="text-xs md:text-sm leading-tight font-bold">{t.correct}</div>
             </div>
             <div className="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl min-w-0">
-              <div className="text-xl md:text-2xl font-bold text-red-500 truncate">{Number(activeQuestions.length) - Number(correctCount)}</div>
-              <div className="text-xs md:text-sm leading-tight">{t.wrong}</div>
+              <div className="text-xl md:text-2xl font-black text-red-600 dark:text-red-400 truncate">{Number(activeQuestions.length) - Number(correctCount)}</div>
+              <div className="text-xs md:text-sm leading-tight font-bold">{t.wrong}</div>
             </div>
           </div>
           <div className="flex flex-col gap-3 w-full">
@@ -825,7 +1138,7 @@ function App() {
       <div className="fixed inset-0 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-slate-900 dark:to-slate-800 -z-10 w-full h-full" />
       <nav className="p-4 flex justify-between items-center max-w-7xl mx-auto w-full">
         <div className="cursor-pointer flex-shrink-0" onClick={() => setView('menu')}>
-          <img src={theme === 'dark' ? LOGO_DARK : LOGO_LIGHT} alt="FireGOLD" className="h-8 md:h-10 w-auto object-contain" />
+          <img src={theme === 'dark' ? LOGO_DARK : LOGO_LIGHT} alt="FireGOLD" className="h-14 md:h-20 w-auto object-contain" />
         </div>
         <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <div className="flex items-center gap-2">
@@ -837,7 +1150,7 @@ function App() {
             </button>
           </div>
           <div className="h-6 w-px bg-gray-300 dark:bg-slate-700 mx-0.5"></div>
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors text-gray-700 dark:text-gray-300">
+          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors text-gray-700 dark:text-gray-100">
             {theme === 'dark' ? <IconSun /> : <IconMoon />}
           </button>
         </div>
@@ -848,6 +1161,7 @@ function App() {
         {view === 'results' && renderResults()}
         {view === 'history' && renderHistory()}
         {view === 'session_detail' && renderSessionDetail()}
+        {view === 'hints' && renderHints()}
       </main>
     </div>
   );
